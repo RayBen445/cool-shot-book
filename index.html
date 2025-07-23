@@ -2,24 +2,57 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Cool Shot Book</title>
+  <title>Welcome to Cool Shot Book</title>
 
-  <!-- Link Custom CSS -->
+  <!-- Custom CSS for theme -->
   <link rel="stylesheet" href="styles/coolshot-theme.css">
 
-  <!-- Load Google Fonts (optional but stylish) -->
+  <!-- Optional Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Playfair+Display&display=swap" rel="stylesheet">
 
+  <!-- Page-level styling -->
   <style>
-    #welcome-text {
-      font-size: 1.6em;
-      margin-top: 2em;
-      max-width: 800px;
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding: 2em;
+      background-color: #0f0f23;
+      color: #e0f7fa;
+      font-family: 'Roboto Mono', monospace;
     }
-    #scroll-hint {
+
+    #welcome-text {
+      font-size: 1.4em;
+      max-width: 800px;
       margin-top: 1.5em;
+      text-align: center;
+    }
+
+    #scroll-hint {
+      margin-top: 2em;
       font-weight: bold;
+      color: #ffcc00;
+      font-size: 1.1em;
+      text-align: center;
+    }
+
+    .chapter-link {
+      margin-top: 2em;
+      font-size: 1em;
+      text-align: center;
+    }
+
+    .chapter-link a {
       color: #80d8ff;
+      text-decoration: none;
+    }
+
+    .chapter-link a:hover {
+      color: #ffd54f;
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -31,10 +64,18 @@
 
   <div id="scroll-hint">Scroll deeper. Think wider. Build smarter.</div>
 
-  <!-- Load Dreaming Logic Script -->
+  <div class="chapter-link">
+    <p><a href="toc.html">📖 View Table of Contents</a></p>
+    <p><a href="chapters/chapter01.html">🌌 Read Chapter 1: What If Machines Could Dream?</a></p>
+  </div>
+
+  <!-- Load Dreaming Logic script -->
   <script src="scripts/dreaming-logic.js"></script>
   <script>
-    typeWriter("Welcome to the mind of Professor O. This is more than a book—it's a digital blueprint of thought, a codebase of consciousness, and an African tech manifesto crafted to reshape how systems think and how thinkers build.", "welcome-text", 40);
+    typeWriter(
+      "Welcome to the mind of Professor O. This is more than a book—it's a digital blueprint of thought, a codebase of consciousness, and an African tech manifesto crafted to reshape how systems think and how thinkers build.",
+      "welcome-text", 40
+    );
     pulseGlow("scroll-hint");
   </script>
 
