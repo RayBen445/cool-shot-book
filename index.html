@@ -64,16 +64,23 @@
 <body>
 
   <!-- Sidebar -->
-  <div id="sidebar">
-    <h2>📚 Contents</h2>
-    <ul>
-      <li><a href="index.html">🏠 Home</a></li>
-      <li><a href="chapters/chapter01.html">🌌 Chapter 1</a></li>
-      <li><a href="chapters/chapter02.html">🧠 Chapter 2</a></li>
-      <li><a href="chapters/chapter03.html">🎛️ Chapter 3</a></li>
-      <li><a href="toc.html">🧭 Full TOC</a></li>
-    </ul>
-  </div>
+<!-- Hamburger icon -->
+<button id="hamburger" onclick="openSidebar()">☰</button>
+
+<!-- Tap overlay -->
+<div id="overlay" onclick="closeSidebar()"></div>
+
+<!-- Sidebar -->
+<div id="sidebar" class="closed">
+  <h2>📚 Contents</h2>
+  <ul>
+    <li><a href="index.html">🏠 Home</a></li>
+    <li><a href="chapters/chapter01.html">🌌 Chapter 1</a></li>
+    <li><a href="chapters/chapter02.html">🧠 Chapter 2</a></li>
+    <li><a href="chapters/chapter03.html">🎛️ Chapter 3</a></li>
+    <li><a href="toc.html">🧭 Full TOC</a></li>
+  </ul>
+</div>
 
   <!-- Main Content -->
   <h1>👋 Welcome to Cool Shot Book</h1>
