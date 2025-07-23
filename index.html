@@ -12,9 +12,8 @@
 
   <style>
     html {
-      font-size: 20px; /* Bigger base size */
+      font-size: 20px;
     }
-
     body {
       display: flex;
       flex-direction: column;
@@ -22,24 +21,24 @@
       justify-content: flex-start;
       min-height: 100vh;
       padding: 2.5em;
-      margin-left: 240px;
+      margin-left: 260px; /* Matches fatter sidebar */
       background-color: #0f0f23;
       color: #e0f7fa;
       font-family: 'Roboto Mono', monospace;
       line-height: 1.9;
     }
-
     h1 {
       font-size: 2.6em;
+      text-align: center;
+      color: #ffe600;
+      margin-bottom: 1em;
     }
-
     #welcome-text {
       font-size: 1.8em;
       max-width: 900px;
       margin-top: 2em;
       text-align: center;
     }
-
     #scroll-hint {
       margin-top: 2.5em;
       font-weight: bold;
@@ -47,7 +46,6 @@
       font-size: 1.4em;
       text-align: center;
     }
-
     #theme-label {
       margin-top: 2em;
       background-color: #263238;
@@ -63,31 +61,28 @@
 </head>
 <body>
 
-  <!-- Sidebar -->
-<!-- Hamburger icon -->
+<!-- Hamburger Menu -->
 <button id="hamburger" onclick="openSidebar()">☰</button>
-
-<!-- Tap overlay -->
 <div id="overlay" onclick="closeSidebar()"></div>
 
-<!-- Sidebar -->
+<!-- 📘 Cool Shot Sidebar -->
 <div id="sidebar" class="closed">
   <h2>📚 Contents</h2>
   <ul>
     <li><a href="/index.html">🏠 Home</a></li>
     <li class="{% if page.path == 'chapters/chapter01.md' %}active{% endif %}">
-      <a href="/chapters/chapter01.md">🌌 Chapter 1: What If Machines Could Dream?</a>
+      <a href="/chapters/chapter01.md">🌌 Chapter 1</a>
     </li>
     <li class="{% if page.path == 'chapters/chapter02.md' %}active{% endif %}">
-      <a href="/chapters/chapter02.md">🧠 Chapter 2: Architect of Logic</a>
+      <a href="/chapters/chapter02.md">🧠 Chapter 2</a>
     </li>
     <li class="{% if page.path == 'chapters/chapter03.md' %}active{% endif %}">
-      <a href="/chapters/chapter03.md">🎛️ Chapter 3: The System Whisperer</a>
+      <a href="/chapters/chapter03.md">🎛️ Chapter 3</a>
     </li>
     <li><a href="/toc.html">🧭 Full TOC</a></li>
   </ul>
 
-  <h2>🌀 Navigation</h2>
+  <h2>🌀 Acts</h2>
   <ul>
     <li><a href="#act-i">Act I</a></li>
     <li><a href="#act-ii">Act II</a></li>
@@ -98,25 +93,52 @@
     <p>Rendered by syntax. Read by soul.<br>Crafted in logic. Echoed in recursion.</p>
   </footer>
 </div>
-  <!-- Main Content -->
-  <h1>👋 Welcome to Cool Shot Book</h1>
-  <div id="welcome-text"></div>
 
-  <button onclick="toggleTheme()" id="theme-label">
-    ☀️ Switch to Light Dream Mode
-  </button>
+<!-- Main Content -->
+<h1>👋 Welcome to Cool Shot Book</h1>
+<div id="welcome-text"></div>
 
-  <div id="scroll-hint">Scroll deeper. Think wider. Build smarter.</div>
+<button onclick="toggleTheme()" id="theme-label">
+  ☀️ Switch to Light Dream Mode
+</button>
 
-  <!-- JS -->
-  <script src="scripts/dreaming-logic.js"></script>
-  <script>
-    typeWriter(
-      "Welcome to the mind of Professor O. This is more than a book—it's a digital blueprint of thought, a codebase of consciousness, and an African tech manifesto crafted to reshape how systems think and how thinkers build.",
-      "welcome-text", 40
-    );
-    pulseGlow("scroll-hint");
-  </script>
+<div id="scroll-hint">Scroll deeper. Think wider. Build smarter.</div>
+
+<!-- Logic Scripts -->
+<script src="scripts/dreaming-logic.js"></script>
+<script>
+  // Typewriter welcome
+  typeWriter(
+    "Welcome to the mind of Professor O. This is more than a book—it's a digital blueprint of thought, a codebase of consciousness, and an African tech manifesto crafted to reshape how systems think and how thinkers build.",
+    "welcome-text", 40
+  );
+
+  // Scroll pulse hint
+  pulseGlow("scroll-hint");
+
+  // Sidebar toggle functions
+  function openSidebar() {
+    document.getElementById("sidebar").classList.add("open");
+    document.getElementById("sidebar").classList.remove("closed");
+    document.getElementById("overlay").classList.add("active");
+  }
+  function closeSidebar() {
+    document.getElementById("sidebar").classList.add("closed");
+    document.getElementById("sidebar").classList.remove("open");
+    document.getElementById("overlay").classList.remove("active");
+  }
+
+  // Optional theme toggling setup
+  function toggleTheme() {
+    document.body.classList.toggle("light-mode");
+    const btn = document.getElementById("theme-label");
+    if (document.body.classList.contains("light-mode")) {
+      btn.textContent = "🌙 Switch to Dark Thinking Mode";
+    } else {
+      btn.textContent = "☀️ Switch to Light Dream Mode";
+    }
+  }
+</script>
 
 </body>
-</html>
+  </html>
