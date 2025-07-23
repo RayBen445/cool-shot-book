@@ -1,0 +1,72 @@
+/* === Cool Shot Theme CSS === */
+
+body {
+  background-color: #0f0f23;
+  color: #e0f7fa;
+  font-family: 'Roboto Mono', monospace;
+  line-height: 1.75;
+  padding: 2em;
+}
+
+/* Heading Styling */
+h1, h2, h3 {
+  color: #ffcc00;
+  font-family: 'Playfair Display', serif;
+  text-shadow: 1px 1px 3px #141414;
+  margin-top: 1.2em;
+}
+
+/* Monologues & Dialogue Blocks */
+blockquote {
+  font-style: italic;
+  color: #b2ebf2;
+  border-left: 4px solid #00796b;
+  padding-left: 1em;
+  margin-left: 0;
+}
+
+/* Code Snippets & Logs */
+pre, code {
+  background-color: #1e1e2e;
+  color: #81f3ff;
+  padding: 0.6em 1em;
+  border-radius: 5px;
+  font-size: 0.95em;
+  overflow-x: auto;
+}
+
+/* Scene titles and dramatic sections */
+.scene-title {
+  font-size: 1.4em;
+  color: #ffd54f;
+  margin-top: 1.5em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 2px solid #ffcc00;
+}
+
+/* Fade Out Text */
+.fade-out {
+  color: #bdbdbd;
+  font-style: italic;
+  text-align: center;
+  padding-top: 2em;
+}
+
+/* Links */
+a {
+  color: #80d8ff;
+  text-decoration: underline;
+}
+a:hover {
+  color: #ffeb3b;
+  background-color: #263238;
+}
+
+/* Footer or final echoes */
+footer {
+  font-size: 0.85em;
+  color: #9e9e9e;
+  margin-top: 4em;
+  text-align: center;
+  }
