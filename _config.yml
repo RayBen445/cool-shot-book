@@ -1,0 +1,12 @@
+title: Cool Shot Book
+description: Digital philosophy & intelligent systems by Professor O
+markdown: kramdown
+theme: null
+exclude:
+  - Gemfile
+  - Gemfile.lock
+
+plugins:
+  - jekyll-include-relative
+
+permalink: /:title/
