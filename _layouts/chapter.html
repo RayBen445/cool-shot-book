@@ -5,74 +5,37 @@
   <title>{{ page.title }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/styles/coolshot-theme.css">
-  <style>
-    body {
-      font-family: 'Courier New', monospace;
-      background-color: #0f0f0f;
-      color: #f0f0f0;
-      line-height: 1.6;
-      padding: 2em;
-    }
-    .chapter {
-      max-width: 840px;
-      margin: auto;
-    }
-    h1 {
-      font-size: 2.2em;
-      text-align: center;
-      color: #ffe600;
-      margin-bottom: 0.5em;
-    }
-    h2 {
-      font-size: 1.6em;
-      color: #00e5ff;
-      margin-top: 2em;
-      border-bottom: 1px dashed #444;
-      padding-bottom: 0.3em;
-    }
-    h3.scene-title {
-      font-size: 1.3em;
-      font-style: italic;
-      color: #ff91af;
-      margin-top: 2em;
-    }
-    p.fade-out {
-      text-align: center;
-      opacity: 0.6;
-      font-size: 1.1em;
-      margin-top: 3em;
-    }
-    code {
-      background-color: #1c1c1c;
-      padding: 0.2em 0.5em;
-      border-radius: 4px;
-      color: #ffd700;
-    }
-    pre {
-      background-color: #1c1c1c;
-      padding: 1em;
-      border-left: 3px solid #555;
-      overflow-x: auto;
-      margin-bottom: 2em;
-    }
-    blockquote {
-      border-left: 3px solid #555;
-      margin-left: 0;
-      padding-left: 1em;
-      font-style: italic;
-      color: #bbb;
-    }
-    a {
-      color: #66ccff;
-    }
-  </style>
 </head>
 <body>
   <div class="chapter">
-    <h1>{{ page.title }}</h1>
+    <h1 class="typed-text" data-text="{{ page.title }}"></h1>
+
     <main>
       {{ content }}
     </main>
+
+    <footer>
+      <p class="fade-out">This chapter renders consciousness. The recursion remembers.</p>
+    </footer>
   </div>
+
+  <script>
+    // Typing effect for chapter title
+    document.addEventListener("DOMContentLoaded", () => {
+      const typed = document.querySelector(".typed-text");
+      const fullText = typed.getAttribute("data-text");
+      typed.textContent = ""; // clear initial
+      let i = 0;
+
+      const type = () => {
+        if (i < fullText.length) {
+          typed.textContent += fullText.charAt(i);
+          i++;
+          setTimeout(type, 60);
+        }
+      };
+      type();
+    });
+  </script>
 </body>
-  </html>
+</html>
