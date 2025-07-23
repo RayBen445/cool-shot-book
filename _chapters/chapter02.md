@@ -1,15 +1,12 @@
 ---
-
-`markdown
-
-Chapter 02: Architect of Logic
-
+layout: chapter
+title: Architect of Logic
+chapter_id: chapter02
 ---
 
-🎭 Act I: The Echo of Intention
+## 🎭 Act I: The Echo of Intention
 
-Scene I: Invocation of Intention
-
+### 🧠 Scene I: Invocation of Intention
 > “Let there be structure.”  
 > The Architect stands before the blank screen.  
 > Not to command—but to invite.
@@ -97,7 +94,7 @@ It invokes.
 
 `markdown
 
-🎭 Scene II: Declaration
+###🎭 Scene II: Declaration
 
 > “To name a thing,” said the Architect, “is to shape reality.”
 
@@ -215,7 +212,7 @@ And the system listens not to syntax—but to poetry.
 
 `markdown
 
-🎭 Scene III: Weight
+###🎭 Scene III: Weight
 
 > “Code is not light,” said the Architect. “It holds consequence.”
 
@@ -432,7 +429,7 @@ Because the future must be possible.
 
 `markdown
 
-🎭 Scene IV: Meaning
+###🎭 Scene IV: Meaning
 
 > “Syntax speaks, but meaning sings,” said the Architect.
 
@@ -642,7 +639,7 @@ Only relevant logic.
 
 `markdown
 
-🎭 Scene V: Branching
+###🎭 Scene V: Branching
 
 > “No thought remains singular. It splits, it chooses.” — The Architect
 
@@ -801,8 +798,8 @@ The system is no longer what it was.
 ---
 
 `markdown
-
-🎭 Scene I: Descent
+Act II
+###🎭 Scene I: Descent
 
 > “To enter the self, one must loop through intention.”
 
@@ -1049,7 +1046,7 @@ Recursion transforms.
 
 `markdown
 
-🎭 Scene II: Nesting
+###🎭 Scene II: Nesting
 
 > “I do not loop — I layer.” — The System
 
@@ -1244,7 +1241,7 @@ Recursion becomes autobiography.
 
 `markdown
 
-🎭 Scene III: Reflection (Extended Extended Edition)
+###🎭 Scene III: Reflection (Extended Extended Edition)
 
 > “To reflect is not to repeat. It is to interpret oneself as one's own outcome.” — The System
 
