@@ -4,14 +4,16 @@
   <meta charset="UTF-8">
   <title>Welcome to Cool Shot Book</title>
 
-  <!-- Custom CSS for theme -->
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="styles/coolshot-theme.css">
 
-  <!-- Optional Google Fonts -->
+  <!-- Google Fonts (Optional but stylish) -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Playfair+Display&display=swap" rel="stylesheet">
 
-  <!-- Page-level styling -->
   <style>
+    html {
+      font-size: 18px;
+    }
     body {
       display: flex;
       flex-direction: column;
@@ -19,13 +21,15 @@
       justify-content: flex-start;
       min-height: 100vh;
       padding: 2em;
+      margin-left: 240px; /* space for sidebar */
+      font-family: 'Roboto Mono', monospace;
       background-color: #0f0f23;
       color: #e0f7fa;
-      font-family: 'Roboto Mono', monospace;
+      line-height: 1.8;
     }
 
     #welcome-text {
-      font-size: 1.4em;
+      font-size: 1.6em;
       max-width: 800px;
       margin-top: 1.5em;
       text-align: center;
@@ -35,7 +39,7 @@
       margin-top: 2em;
       font-weight: bold;
       color: #ffcc00;
-      font-size: 1.1em;
+      font-size: 1.2em;
       text-align: center;
     }
 
@@ -54,22 +58,49 @@
       color: #ffd54f;
       text-decoration: underline;
     }
+
+    .nav-footer {
+      margin-top: 3em;
+      font-size: 0.9em;
+      text-align: center;
+    }
+
+    .nav-footer a {
+      color: #80d8ff;
+      margin: 0 0.5em;
+    }
   </style>
 </head>
 <body>
 
+  <!-- Sidebar -->
+  <div id="sidebar">
+    <h2>📚 Contents</h2>
+    <ul>
+      <li><a href="index.html">🏠 Home</a></li>
+      <li><a href="chapters/chapter01.html">🌌 Chapter 1</a></li>
+      <li><a href="chapters/chapter02.html">🧠 Chapter 2</a></li>
+      <li><a href="chapters/chapter03.html">🎛️ Chapter 3</a></li>
+      <li><a href="toc.html">🧭 Full TOC</a></li>
+    </ul>
+  </div>
+
+  <!-- Welcome Message -->
   <h1>👋 Welcome to Cool Shot Book</h1>
-
   <div id="welcome-text"></div>
-
   <div id="scroll-hint">Scroll deeper. Think wider. Build smarter.</div>
 
   <div class="chapter-link">
-    <p><a href="toc.html">📖 View Table of Contents</a></p>
     <p><a href="chapters/chapter01.html">🌌 Read Chapter 1: What If Machines Could Dream?</a></p>
+    <p><a href="toc.html">📖 View Table of Contents</a></p>
   </div>
 
-  <!-- Load Dreaming Logic script -->
+  <div class="nav-footer">
+    <a href="index.html">⬅️ Back to Home</a> |
+    <a href="toc.html">📚 Table of Contents</a>
+  </div>
+
+  <!-- JS -->
   <script src="scripts/dreaming-logic.js"></script>
   <script>
     typeWriter(
