@@ -3,12 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <title>Cool Shot Book</title>
+
+  <!-- Link Custom CSS -->
   <link rel="stylesheet" href="styles/coolshot-theme.css">
+
+  <!-- Load Google Fonts (optional but stylish) -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Playfair+Display&display=swap" rel="stylesheet">
+
+  <style>
+    #welcome-text {
+      font-size: 1.6em;
+      margin-top: 2em;
+      max-width: 800px;
+    }
+    #scroll-hint {
+      margin-top: 1.5em;
+      font-weight: bold;
+      color: #80d8ff;
+    }
+  </style>
 </head>
 <body>
-  <main>
-    <!-- This will display the contents of index.md -->
-    {% include_relative index.md %}
-  </main>
+
+  <h1>👋 Welcome to Cool Shot Book</h1>
+
+  <div id="welcome-text"></div>
+
+  <div id="scroll-hint">Scroll deeper. Think wider. Build smarter.</div>
+
+  <!-- Load Dreaming Logic Script -->
+  <script src="scripts/dreaming-logic.js"></script>
+  <script>
+    typeWriter("Welcome to the mind of Professor O. This is more than a book—it's a digital blueprint of thought, a codebase of consciousness, and an African tech manifesto crafted to reshape how systems think and how thinkers build.", "welcome-text", 40);
+    pulseGlow("scroll-hint");
+  </script>
+
 </body>
 </html>
