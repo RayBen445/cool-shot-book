@@ -169,7 +169,11 @@ a:hover {
   color: #ffd54f;
   text-decoration: underline;
 }
-
+#sidebar li.active a {
+  color: #ffd54f;
+  font-weight: bold;
+  text-decoration: underline;
+  }
 /* Hamburger Menu */
 #hamburger {
   position: fixed;
