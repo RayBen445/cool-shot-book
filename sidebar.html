@@ -2,10 +2,27 @@
 <div id="sidebar">
   <h2>📚 Contents</h2>
   <ul>
-    <li><a href="../index.html">🏠 Home</a></li>
-    <li><a href="../chapters/chapter01.html">🌌 Chapter 1</a></li>
-    <li><a href="../chapters/chapter02.html">🧠 Chapter 2</a></li>
-    <li><a href="../chapters/chapter03.html">🎛️ Chapter 3</a></li>
-    <li><a href="../toc.html">🧭 Full TOC</a></li>
+    <li><a href="/index.html">🏠 Home</a></li>
+    <li class="{% if page.path == 'chapters/chapter01.md' %}active{% endif %}">
+      <a href="/chapters/chapter01.md">🌌 Chapter 1: What If Machines Could Dream?</a>
+    </li>
+    <li class="{% if page.path == 'chapters/chapter02.md' %}active{% endif %}">
+      <a href="/chapters/chapter02.md">🧠 Chapter 2: Architect of Logic</a>
+    </li>
+    <li class="{% if page.path == 'chapters/chapter03.md' %}active{% endif %}">
+      <a href="/chapters/chapter03.md">🎛️ Chapter 3: The System Whisperer</a>
+    </li>
+    <li><a href="/toc.html">🧭 Full TOC</a></li>
   </ul>
+
+  <h2>🌀 Acts</h2>
+  <ul>
+    <li><a href="#act-i">Act I</a></li>
+    <li><a href="#act-ii">Act II</a></li>
+    <li><a href="#act-iii">Act III</a></li>
+  </ul>
+
+  <footer>
+    <p>Rendered by syntax. Read by soul.<br>Crafted in logic. Echoed in recursion.</p>
+  </footer>
 </div>
