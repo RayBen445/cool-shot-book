@@ -6,14 +6,10 @@
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="styles/coolshot-theme.css">
-
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Playfair+Display&display=swap" rel="stylesheet">
 
   <style>
-    html {
-      font-size: 20px;
-    }
+    html { font-size: 20px; }
     body {
       display: flex;
       flex-direction: column;
@@ -33,36 +29,14 @@
       background-color: #f6f6f6;
       color: #1e1e2e;
     }
-    body.light-mode h1,
-    body.light-mode h2,
-    body.light-mode h3 {
-      color: #2c3e50;
-      text-shadow: none;
-    }
-    body.light-mode a {
-      color: #007acc;
-    }
-    body.light-mode a:hover {
-      background-color: #e3f2fd;
-      color: #004080;
-    }
-    body.light-mode #theme-label {
-      background-color: #f0f0f0;
-      color: #007acc;
-    }
-    body.light-mode #sidebar {
-      background-color: #eeeeee;
-      color: #333;
-    }
-    body.light-mode #sidebar a {
-      color: #007acc;
-    }
-    body.light-mode #sidebar a:hover {
-      color: #004080;
-    }
-    body.light-mode #sidebar li.active a {
-      color: #ff9800;
-    }
+    body.light-mode h1, h2, h3 { color: #2c3e50; text-shadow: none; }
+    body.light-mode a { color: #007acc; }
+    body.light-mode a:hover { background-color: #e3f2fd; color: #004080; }
+    body.light-mode #theme-label { background-color: #f0f0f0; color: #007acc; }
+    body.light-mode #sidebar { background-color: #eeeeee; color: #333; }
+    body.light-mode #sidebar a { color: #007acc; }
+    body.light-mode #sidebar a:hover { color: #004080; }
+    body.light-mode #sidebar li.active a { color: #ff9800; }
 
     h1 {
       font-size: 2.6em;
@@ -99,7 +73,7 @@
 </head>
 <body>
 
-<!-- Hamburger Menu -->
+<!-- Sidebar Toggle -->
 <button id="hamburger" onclick="openSidebar()">☰</button>
 <div id="overlay" onclick="closeSidebar()"></div>
 
@@ -108,15 +82,9 @@
   <h2>📚 Contents</h2>
   <ul>
     <li><a href="/index.html">🏠 Home</a></li>
-    <li class="{% if page.path == '_chapters/chapter01.md' %}active{% endif %}">
-      <a href="/_chapters/chapter01.md">🌌 Chapter 1</a>
-    </li>
-    <li class="{% if page.path == '_chapters/chapter02.md' %}active{% endif %}">
-      <a href="_/chapters/chapter02.md">🧠 Chapter 2</a>
-    </li>
-    <li class="{% if page.path == '_chapters/chapter03.md' %}active{% endif %}">
-      <a href="_/chapters/chapter03.md">🎛️ Chapter 3</a>
-    </li>
+    <li><a href="/chapters/chapter01.html">🌌 Chapter 1</a></li>
+    <li><a href="/chapters/chapter02.html">🧠 Chapter 2</a></li>
+    <li><a href="/chapters/chapter03.html">🎛️ Chapter 3</a></li>
     <li><a href="/toc.html">🧭 Full TOC</a></li>
   </ul>
 
@@ -132,7 +100,7 @@
   </footer>
 </div>
 
-<!-- Main Content -->
+<!-- Welcome Content -->
 <h1>👋 Welcome to Cool Shot Book</h1>
 <div id="welcome-text"></div>
 
@@ -164,15 +132,26 @@
   }
 
   function toggleTheme() {
-    document.body.classList.toggle("light-mode");
+    const body = document.body;
     const btn = document.getElementById("theme-label");
-    if (document.body.classList.contains("light-mode")) {
-      btn.textContent = "🌙 Switch to Dark Thinking Mode";
-    } else {
-      btn.textContent = "☀️ Switch to Light Dream Mode";
-    }
+    body.classList.toggle("light-mode");
+    const isLight = body.classList.contains("light-mode");
+    btn.textContent = isLight
+      ? "🌙 Switch to Dark Thinking Mode"
+      : "☀️ Switch to Light Dream Mode";
+    localStorage.setItem("themeMode", isLight ? "light" : "dark");
   }
+
+  window.addEventListener("DOMContentLoaded", () => {
+    const saved = localStorage.getItem("themeMode");
+    const body = document.body;
+    const btn = document.getElementById("theme-label");
+    if (saved === "light") {
+      body.classList.add("light-mode");
+      btn.textContent = "🌙 Switch to Dark Thinking Mode";
+    }
+  });
 </script>
 
 </body>
-          </html>
+  </html>
