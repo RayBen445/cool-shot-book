@@ -89,6 +89,7 @@ footer {
 }
 
 /* Sidebar Navigation */
+/* Sidebar base */
 #sidebar {
   position: fixed;
   left: 0;
@@ -102,23 +103,27 @@ footer {
   font-family: 'Roboto Mono', monospace;
   overflow-y: auto;
   z-index: 999;
+  transition: transform 0.4s ease;
 }
 
+#sidebar.closed {
+  transform: translateX(-240px); /* hide sidebar */
+}
+
+/* Sidebar links and headings */
 #sidebar h2 {
-  font-size: 1.2em;
+  font-size: 1.3em;
   margin-bottom: 1em;
 }
-
 #sidebar ul {
   list-style: none;
   padding: 0;
 }
-
 #sidebar li {
-  margin: 0.8em 0;
+  margin: 1em 0;
 }
-
 #sidebar a {
+  font-size: 1.1em;
   color: #80d8ff;
   text-decoration: none;
 }
@@ -126,6 +131,46 @@ footer {
   color: #ffd54f;
   text-decoration: underline;
 }
+
+/* Hamburger icon (shown only on mobile) */
+#hamburger {
+  position: fixed;
+  top: 1em;
+  left: 1em;
+  font-size: 2em;
+  color: #ffcc00;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* Overlay to detect outside click */
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 998;
+}
+
+/* On mobile — hide sidebar until activated */
+@media screen and (max-width: 768px) {
+  #sidebar {
+    transform: translateX(-240px);
+  }
+  #sidebar.open {
+    transform: translateX(0);
+  }
+  #overlay.active {
+    display: block;
+  }
+  body {
+    margin-left: 0;
+    padding: 1em;
+  }
+  }
 
 /* Responsive Typography for Mobile */
 @media screen and (max-width: 768px) {
