@@ -70,3 +70,45 @@ footer {
   margin-top: 4em;
   text-align: center;
   }
+#sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 220px;
+  height: 100vh;
+  background-color: #141414;
+  padding: 2em 1em;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.5);
+  color: #ffcc00;
+  font-family: 'Roboto Mono', monospace;
+  overflow-y: auto;
+  z-index: 999;
+}
+
+#sidebar h2 {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+}
+
+#sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+#sidebar li {
+  margin: 0.8em 0;
+}
+
+#sidebar a {
+  color: #80d8ff;
+  text-decoration: none;
+}
+#sidebar a:hover {
+  color: #ffd54f;
+  text-decoration: underline;
+}
+
+/* Push main content to the right */
+body {
+  margin-left: 240px;
+  }
