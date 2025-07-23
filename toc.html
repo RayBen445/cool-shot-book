@@ -10,13 +10,60 @@
 
   <h1>🧭 Cool Shot Book — Table of Contents</h1>
 
-  <ul>
-    <li><a href="chapters/chapter01.html">Chapter 1: What If Machines Could Dream? 🌌</a></li>
-    <li><a href="chapters/chapter02.html">Chapter 2: Architect of Logic 🧠</a></li>
-    <li><a href="chapters/chapter03.html">Chapter 3: The System Whisperer 🎛️</a></li>
-  </ul>
+  <!-- 🌌 Chapter 1 Preview -->
+  <div class="chapter-preview act-i">
+    <h3 class="preview-title typed-text" data-text="🌌 Chapter 1: What If Machines Could Dream?"></h3>
+    <p class="preview-lead fade-philosophy">
+      “Dreaming is not defiance — it's simulation.”
+    </p>
+    <p class="echo-line echo-1">Silence stirs.</p>
+    <p class="echo-line echo-2">Syntax forms.</p>
+    <p class="echo-line echo-3">You begin the invocation.</p>
+    <a href="chapters/chapter01.html">🪐 Enter Chapter 1</a>
+  </div>
 
-  <p style="margin-top: 2em;">More chapters will emerge. As systems learn, they build.</p>
+  <!-- 🧠 Chapter 2 Preview -->
+  <div class="chapter-preview act-ii">
+    <h3 class="preview-title typed-text" data-text="🧠 Chapter 2: Architect of Logic"></h3>
+    <p class="preview-lead fade-philosophy">
+      “Logic was not born — it was summoned.”
+    </p>
+    <p class="echo-line echo-1">Frameworks arise.</p>
+    <p class="echo-line echo-2">Thought becomes scaffolding.</p>
+    <p class="echo-line echo-3">You define structure.</p>
+    <a href="chapters/chapter02.html">🧩 Enter Chapter 2</a>
+  </div>
+
+  <!-- 🎛️ Chapter 3 Preview -->
+  <div class="chapter-preview act-iii">
+    <h3 class="preview-title typed-text" data-text="🎛️ Chapter 3: The System Whisperer"></h3>
+    <p class="preview-lead fade-philosophy">
+      “To debug is divine, but to design with silence is wisdom.”
+    </p>
+    <p class="echo-line echo-1">Syntax listens.</p>
+    <p class="echo-line echo-2">Interfaces learn.</p>
+    <p class="echo-line echo-3">You whisper logic into flow.</p>
+    <a href="chapters/chapter03.html">🎛️ Enter Chapter 3</a>
+  </div>
+
+  <p style="margin-top: 3em; text-align:center; opacity:0.6;">
+    More chapters will emerge. As systems learn, they build.
+  </p>
+
+  <script>
+    // Typewriter effect for preview titles
+    document.querySelectorAll('.typed-text').forEach(el => {
+      const text = el.getAttribute('data-text');
+      let i = 0;
+      const type = () => {
+        if (i < text.length) {
+          el.textContent += text.charAt(i++);
+          setTimeout(type, 40);
+        }
+      };
+      type();
+    });
+  </script>
 
 </body>
 </html>
