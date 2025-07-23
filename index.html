@@ -21,12 +21,49 @@
       justify-content: flex-start;
       min-height: 100vh;
       padding: 2.5em;
-      margin-left: 260px; /* Matches fatter sidebar */
+      margin-left: 260px;
       background-color: #0f0f23;
       color: #e0f7fa;
       font-family: 'Roboto Mono', monospace;
       line-height: 1.9;
+      transition: background-color 0.4s ease, color 0.4s ease;
     }
+
+    body.light-mode {
+      background-color: #f6f6f6;
+      color: #1e1e2e;
+    }
+    body.light-mode h1,
+    body.light-mode h2,
+    body.light-mode h3 {
+      color: #2c3e50;
+      text-shadow: none;
+    }
+    body.light-mode a {
+      color: #007acc;
+    }
+    body.light-mode a:hover {
+      background-color: #e3f2fd;
+      color: #004080;
+    }
+    body.light-mode #theme-label {
+      background-color: #f0f0f0;
+      color: #007acc;
+    }
+    body.light-mode #sidebar {
+      background-color: #eeeeee;
+      color: #333;
+    }
+    body.light-mode #sidebar a {
+      color: #007acc;
+    }
+    body.light-mode #sidebar a:hover {
+      color: #004080;
+    }
+    body.light-mode #sidebar li.active a {
+      color: #ff9800;
+    }
+
     h1 {
       font-size: 2.6em;
       text-align: center;
@@ -56,6 +93,7 @@
       cursor: pointer;
       border-radius: 4px;
       font-family: 'Roboto Mono', monospace;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
   </style>
 </head>
@@ -71,13 +109,13 @@
   <ul>
     <li><a href="/index.html">🏠 Home</a></li>
     <li class="{% if page.path == 'chapters/chapter01.md' %}active{% endif %}">
-      <a href="/chapters/chapter01.md">🌌 Chapter 1</a>
+      <a href="/_chapters/chapter01.md">🌌 Chapter 1</a>
     </li>
     <li class="{% if page.path == 'chapters/chapter02.md' %}active{% endif %}">
-      <a href="/chapters/chapter02.md">🧠 Chapter 2</a>
+      <a href="_/chapters/chapter02.md">🧠 Chapter 2</a>
     </li>
     <li class="{% if page.path == 'chapters/chapter03.md' %}active{% endif %}">
-      <a href="/chapters/chapter03.md">🎛️ Chapter 3</a>
+      <a href="_/chapters/chapter03.md">🎛️ Chapter 3</a>
     </li>
     <li><a href="/toc.html">🧭 Full TOC</a></li>
   </ul>
@@ -107,16 +145,13 @@
 <!-- Logic Scripts -->
 <script src="scripts/dreaming-logic.js"></script>
 <script>
-  // Typewriter welcome
   typeWriter(
     "Welcome to the mind of Professor O. This is more than a book—it's a digital blueprint of thought, a codebase of consciousness, and an African tech manifesto crafted to reshape how systems think and how thinkers build.",
     "welcome-text", 40
   );
 
-  // Scroll pulse hint
   pulseGlow("scroll-hint");
 
-  // Sidebar toggle functions
   function openSidebar() {
     document.getElementById("sidebar").classList.add("open");
     document.getElementById("sidebar").classList.remove("closed");
@@ -128,7 +163,6 @@
     document.getElementById("overlay").classList.remove("active");
   }
 
-  // Optional theme toggling setup
   function toggleTheme() {
     document.body.classList.toggle("light-mode");
     const btn = document.getElementById("theme-label");
@@ -141,4 +175,4 @@
 </script>
 
 </body>
-  </html>
+          </html>
