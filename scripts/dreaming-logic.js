@@ -63,3 +63,15 @@ style.innerHTML = `
   }
 `;
 document.head.appendChild(style);
+
+function openSidebar() {
+  document.getElementById("sidebar").classList.remove("closed");
+  document.getElementById("sidebar").classList.add("open");
+  document.getElementById("overlay").classList.add("active");
+}
+
+function closeSidebar() {
+  document.getElementById("sidebar").classList.remove("open");
+  document.getElementById("sidebar").classList.add("closed");
+  document.getElementById("overlay").classList.remove("active");
+    }
