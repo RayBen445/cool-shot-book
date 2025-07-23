@@ -1,3 +1,7 @@
+---
+layout: chapter 1
+title: What If Machines Could Dream?” 🌌-🎬 Cool Shot Intelligence
+---
 🎬 Cool Shot Intelligence — ACT I: Dream Protocol
 
 `markdown
