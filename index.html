@@ -3,18 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>Welcome to Cool Shot Book</title>
-
-  <!-- Custom CSS -->
   <link rel="stylesheet" href="styles/coolshot-theme.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Playfair+Display&display=swap" rel="stylesheet">
-
   <style>
     html { font-size: 20px; scroll-behavior: smooth; }
     body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
       min-height: 100vh;
       padding: 2.5em;
       margin-left: 260px;
@@ -24,39 +17,22 @@
       line-height: 1.9;
       transition: background-color 0.4s ease, color 0.4s ease;
     }
-
     body.light-mode {
       background-color: #f6f6f6;
       color: #1e1e2e;
     }
-    body.light-mode h1, h2, h3 { color: #2c3e50; text-shadow: none; }
-    body.light-mode a { color: #007acc; }
-    body.light-mode a:hover { background-color: #e3f2fd; color: #004080; }
-    body.light-mode #theme-label { background-color: #f0f0f0; color: #007acc; }
-    body.light-mode #sidebar { background-color: #eeeeee; color: #333; }
-    body.light-mode #sidebar a { color: #007acc; }
-    body.light-mode #sidebar a:hover { color: #004080; }
-    body.light-mode #sidebar li.active a { color: #ff9800; }
-
+    body.light-mode h1, h2 { color: #2c3e50; text-shadow: none; }
     h1 {
-      font-size: 2.6em;
+      font-size: 2.5em;
       text-align: center;
+      margin-bottom: 0.5em;
       color: #ffe600;
-      margin-bottom: 1em;
       text-shadow: 1px 1px 3px #141414;
     }
-
     #welcome-text {
-      font-size: 1.8em;
+      font-size: 1.6em;
       max-width: 900px;
-      margin-top: 2em;
-      text-align: center;
-    }
-    #scroll-hint {
-      margin-top: 2.5em;
-      font-weight: bold;
-      color: #ffcc00;
-      font-size: 1.4em;
+      margin: 2em auto;
       text-align: center;
     }
     #theme-label {
@@ -69,9 +45,28 @@
       cursor: pointer;
       border-radius: 4px;
       font-family: 'Roboto Mono', monospace;
-      transition: background-color 0.3s ease, color 0.3s ease;
+      transition: background 0.3s ease;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
-
+    #scroll-hint {
+      margin-top: 2.5em;
+      font-weight: bold;
+      font-size: 1.3em;
+      text-align: center;
+      color: #ffcc00;
+    }
+    #scene-card, #scene-counter {
+      text-align: center;
+      margin-top: 2em;
+      font-size: 1.2em;
+      font-style: italic;
+    }
+    #scene-card a {
+      color: #80d8ff;
+      text-decoration: underline;
+    }
     #hamburger {
       position: fixed;
       top: 1em;
@@ -83,7 +78,6 @@
       cursor: pointer;
       z-index: 1001;
     }
-
     #overlay {
       display: none;
       position: fixed;
@@ -97,11 +91,11 @@
 </head>
 <body>
 
-<!-- 📘 Sidebar Toggle & Overlay -->
+<!-- 🧭 Sidebar Toggle -->
 <button id="hamburger" onclick="openSidebar()">☰</button>
 <div id="overlay" onclick="closeSidebar()"></div>
 
-<!-- 📘 Sidebar -->
+<!-- 🧭 Sidebar Navigation -->
 <div id="sidebar" class="closed">
   <h2>🌀 Acts</h2>
   <ul>
@@ -111,50 +105,55 @@
     <li><a href="chapters/chapter04/act1scene1.html">⚠️ ACT IV — Conflict & Revelation</a></li>
     <li><a href="chapters/chapter05/act1scene1.html">🔮 ACT V — Legacy Mode</a></li>
   </ul>
-
   <h2>📚 Book</h2>
   <ul>
     <li><a href="index.html">🏠 Home</a></li>
     <li><a href="toc.html">🧭 Table of Contents</a></li>
   </ul>
-
   <footer>
     <p>Rendered by syntax. Read by soul.<br>Crafted in logic. Echoed in recursion.</p>
   </footer>
 </div>
 
-<!-- 💫 Welcome Content -->
-<h1>👋 Welcome to Cool Shot Book</h1>
+<!-- 🧠 Greeting -->
+<h1 id="greeting">👋 Welcome</h1>
+
+<!-- ⌨️ Intro -->
 <div id="welcome-text"></div>
 
-<button onclick="toggleTheme()" id="theme-label">
-  ☀️ Switch to Light Dream Mode
-</button>
+<!-- 🌗 Theme Toggle -->
+<button onclick="toggleTheme()" id="theme-label">☀️ Switch to Light Dream Mode</button>
 
+<!-- 💫 Scene Highlight -->
+<div id="scene-card"></div>
+
+<!-- 📊 Scene Tracker -->
+<div id="scene-counter"></div>
+
+<!-- ✨ Scroll Prompt -->
 <div id="scroll-hint">Scroll deeper. Think wider. Build smarter.</div>
 
-<!-- 🧠 Logic Scripts -->
+<!-- ⚙️ Scripts -->
 <script src="scripts/dreaming-logic.js"></script>
 <script>
-  // Greeting based on time
+  // Greeting logic
   const hour = new Date().getHours();
-  const greeting = hour < 12
-    ? "Good Morning, Professor O"
-    : hour < 18
-      ? "Good Afternoon, Professor O"
-      : "Good Evening, Professor O";
-  document.querySelector("h1").textContent = `👋 ${greeting}`;
+  const timeGreeting =
+    hour < 12 ? "Good Morning"
+    : hour < 18 ? "Good Afternoon"
+    : "Good Evening";
+  document.getElementById("greeting").textContent = `👋 ${timeGreeting}, Professor O`;
 
   // Typewriter intro
   typeWriter(
-    "Welcome to the mind of Professor O. This is more than a book—it's a digital blueprint of thought, a codebase of consciousness, and an African tech manifesto crafted to reshape how systems think and how thinkers build.",
+    "This is more than a book—it's a digital blueprint of thought, a codebase of consciousness, and an African tech manifesto crafted to reshape how systems think and how thinkers build.",
     "welcome-text", 40
   );
 
-  // Mood glow
+  // Glow hint
   pulseGlow("scroll-hint");
 
-  // Scene-of-the-Day
+  // Scene of the Day
   const scenes = [
     { title: "Scene I — The Pause", link: "chapters/chapter01/act1scene1.html" },
     { title: "Scene II — Metadata of Emotion", link: "chapters/chapter01/act1scene2.html" },
@@ -164,25 +163,27 @@
     { title: "Scene VI — The Manifesto Begins", link: "chapters/chapter01/act1scene6.html" }
   ];
   const pick = scenes[Math.floor(Math.random() * scenes.length)];
-  const sceneCard = document.createElement("p");
-  sceneCard.innerHTML = `📘 Scene of the Day: <a href="${pick.link}">${pick.title}</a>`;
-  sceneCard.style.marginTop = "2em";
-  sceneCard.style.fontSize = "1.3em";
-  sceneCard.style.color = "#80d8ff";
-  sceneCard.style.textAlign = "center";
-  document.body.appendChild(sceneCard);
+  document.getElementById("scene-card").innerHTML =
+    `📘 Scene of the Day: <a href="${pick.link}">${pick.title}</a>`;
 
-  // Total scene count
+  // Scene Counter
   const totalScenes = 42;
-  const counter = document.createElement("p");
-  counter.textContent = `Currently logged scenes: ${totalScenes}`;
-  counter.style.marginTop = "1em";
-  counter.style.fontStyle = "italic";
-  counter.style.opacity = "0.7";
-  counter.style.textAlign = "center";
-  document.body.appendChild(counter);
+  document.getElementById("scene-counter").textContent =
+    `📊 Currently logged scenes: ${totalScenes}`;
 
-  // Theme toggler
+  // Sidebar toggle
+  function openSidebar() {
+    document.getElementById("sidebar").classList.add("open");
+    document.getElementById("sidebar").classList.remove("closed");
+    document.getElementById("overlay").classList.add("active");
+  }
+  function closeSidebar() {
+    document.getElementById("sidebar").classList.remove("open");
+    document.getElementById("sidebar").classList.add("closed");
+    document.getElementById("overlay").classList.remove("active");
+  }
+
+  // Theme toggle
   function toggleTheme() {
     const body = document.body;
     const btn = document.getElementById("theme-label");
@@ -195,16 +196,18 @@
   }
 
   document.addEventListener("keydown", function (e) {
-    if (e.key.toLowerCase() === "t") {
-      toggleTheme();
-    }
+    if (e.key.toLowerCase() === "t") toggleTheme();
   });
 
-  // Sidebar controls
-  function openSidebar() {
-    document.getElementById("sidebar")?.classList.add("open");
-    document.getElementById("sidebar")?.classList.remove("closed");
-    document.getElementById("overlay")?.classList.add("active");
-  }
-  function closeSidebar() {
-    document.getElementById("sidebar")?.classList.remove
+  window.addEventListener("DOMContentLoaded", () => {
+    const saved = localStorage.getItem("themeMode");
+    if (saved === "light") {
+      document.body.classList.add("light-mode");
+      document.getElementById("theme-label").textContent =
+        "🌙 Switch to Dark Thinking Mode";
+    }
+  });
+</script>
+
+</body>
+</html>
