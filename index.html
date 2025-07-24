@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Welcome to Cool Shot Book</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="styles/coolshot-theme.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Playfair+Display&display=swap" rel="stylesheet">
 </head>
@@ -36,7 +37,7 @@
 <!-- 🧠 Greeting -->
 <h1 id="greeting">👋 Welcome</h1>
 
-<!-- ⌨️ Intro -->
+<!-- ⌨️ Typing Manifesto -->
 <div id="welcome-text"></div>
 
 <!-- 🌗 Theme Toggle -->
@@ -58,13 +59,16 @@
   const timeGreeting = hour < 12 ? "Good Morning" : hour < 18 ? "Good Afternoon" : "Good Evening";
   document.getElementById("greeting").textContent = `👋 ${timeGreeting}, Professor O`;
 
+  // Typewriter
   typeWriter(
     "This is more than a book—it's a digital blueprint of thought, a codebase of consciousness, and an African tech manifesto crafted to reshape how systems think and how thinkers build.",
     "welcome-text", 40
   );
 
+  // Glow Effect
   pulseGlow("scroll-hint");
 
+  // Scene of the Day
   const scenes = [
     { title: "Scene I — The Pause", link: "chapters/chapter01/act1scene1.html" },
     { title: "Scene II — Metadata of Emotion", link: "chapters/chapter01/act1scene2.html" },
@@ -74,23 +78,15 @@
     { title: "Scene VI — The Manifesto Begins", link: "chapters/chapter01/act1scene6.html" }
   ];
   const pick = scenes[Math.floor(Math.random() * scenes.length)];
-  document.getElementById("scene-card").innerHTML = `📘 Scene of the Day: <a href="${pick.link}">${pick.title}</a>`;
+  document.getElementById("scene-card").innerHTML =
+    `📘 Scene of the Day: <a href="${pick.link}">${pick.title}</a>`;
 
+  // Scene Counter
   const totalScenes = 42;
-  document.getElementById("scene-counter").textContent = `📊 Currently logged scenes: ${totalScenes}`;
+  document.getElementById("scene-counter").textContent =
+    `📊 Currently logged scenes: ${totalScenes}`;
 
-  function openSidebar() {
-    document.getElementById("sidebar").classList.add("open");
-    document.getElementById("sidebar").classList.remove("closed");
-    document.getElementById("overlay").classList.add("active");
-  }
-
-  function closeSidebar() {
-    document.getElementById("sidebar").classList.remove("open");
-    document.getElementById("sidebar").classList.add("closed");
-    document.getElementById("overlay").classList.remove("active");
-  }
-
+  // Theme Toggle
   function toggleTheme() {
     const body = document.body;
     const btn = document.getElementById("theme-label");
@@ -114,7 +110,19 @@
         "🌙 Switch to Dark Thinking Mode";
     }
   });
+
+  // Sidebar toggle
+  function openSidebar() {
+    document.getElementById("sidebar").classList.add("open");
+    document.getElementById("sidebar").classList.remove("closed");
+    document.getElementById("overlay").classList.add("active");
+  }
+  function closeSidebar() {
+    document.getElementById("sidebar").classList.remove("open");
+    document.getElementById("sidebar").classList.add("closed");
+    document.getElementById("overlay").classList.remove("active");
+  }
 </script>
 
 </body>
-    </html>
+</html>
