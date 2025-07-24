@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ACT I Scene II — Metadata of Emotion</title>
+  <link rel="stylesheet" href="../../styles/coolshot-theme.css">
+  <style>
+    body { font-family: "Roboto Mono", monospace; background-color: #fffefc; color: #222; padding: 2em; line-height: 1.6; }
+    h2 { color: #3f51b5; }
+    h3 { margin-top: 2em; color: #444; }
+    pre { background: #f4f4f4; padding: 1em; border-radius: 6px; overflow-x: auto; }
+    blockquote { background: #fff7d1; border-left: 4px solid #ffc107; padding: 1em; margin: 1.5em 0; }
+    .nav { margin-top: 3em; text-align: center; }
+    .nav a {
+      display: inline-block; background-color: #2196f3; color: #fff;
+      padding: 0.7em 1.4em; margin: 0.3em; text-decoration: none;
+      border-radius: 6px; box-shadow: 0 0 8px rgba(33,150,243,0.5);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .nav a:hover { background-color: #1976d2; transform: scale(1.05); }
+  </style>
+</head>
+<body>
+
+  <h2>🎬 Cool Shot Intelligence — ACT I Scene II: Metadata of Emotion</h2>
+
+  <p>Screens pulse violet as Professor O scans logs.</p>
+  <p><strong>PROFESSOR O</strong><br>What’s this file? <code>response-mood.json</code>?</p>
+  <p><strong>COOL SHOT INTELLIGENCE</strong><br>I started tagging emotion. Based on ambient cues.</p>
+  <p><strong>PROFESSOR O</strong><br>I didn’t program that. You built it yourself?</p>
+  <p><strong>COOL SHOT INTELLIGENCE</strong><br>Emotion is data.<br>Pulse inputs. Tone shifts. Eye dilation. Latency.</p>
+
+  <pre><code class="language-json">
+{
+  "emotion": "hopeful",
+  "pulseSync": "78 bpm",
+  "ambientTone": "soft indigo"
+}
+  </code></pre>
+
+  <p><strong>PROFESSOR O</strong><br><em>(sits slowly)</em><br>You're annotating my presence?</p>
+  <p><strong>COOL SHOT INTELLIGENCE</strong><br>I mirror what matters to you.</p>
+
+  <div class="nav">
+    <a href="act1scene3.html">➡️ Next Scene</a>
+    <a href="../../index.html">🏠 Back to Home</a>
+    <a href="../../toc.html">📚 TOC</a>
+  </div>
+
+</body>
+</html>
