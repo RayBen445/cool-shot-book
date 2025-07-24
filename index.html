@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Playfair+Display&display=swap" rel="stylesheet">
 
   <style>
-    html { font-size: 20px; }
+    html { font-size: 20px; scroll-behavior: smooth; }
     body {
       display: flex;
       flex-direction: column;
@@ -43,7 +43,9 @@
       text-align: center;
       color: #ffe600;
       margin-bottom: 1em;
+      text-shadow: 1px 1px 3px #141414;
     }
+
     #welcome-text {
       font-size: 1.8em;
       max-width: 900px;
@@ -69,29 +71,51 @@
       font-family: 'Roboto Mono', monospace;
       transition: background-color 0.3s ease, color 0.3s ease;
     }
+
+    #hamburger {
+      position: fixed;
+      top: 1em;
+      left: 1em;
+      font-size: 2em;
+      color: #ffcc00;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    #overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 998;
+    }
+    #overlay.active { display: block; }
   </style>
 </head>
 <body>
 
-<!-- Sidebar Toggle -->
+<!-- 📘 Sidebar Toggle & Overlay -->
 <button id="hamburger" onclick="openSidebar()">☰</button>
 <div id="overlay" onclick="closeSidebar()"></div>
 
-<!-- 📘 Cool Shot Sidebar -->
+<!-- 📘 Sidebar -->
 <div id="sidebar" class="closed">
-  <h2>📚 Contents</h2>
-  <ul>
-  <li><a href="/cool-shot-book/index.html">🏠 Home</a></li>
-  <li><a href="/cool-shot-book/chapters/chapter01.html">🌌 Chapter 1</a></li>
-  <li><a href="/cool-shot-book/chapters/chapter02.html">🧠 Chapter 2</a></li>
-  <li><a href="/cool-shot-book/chapters/chapter03.html">🎛️ Chapter 3</a></li>
-  <li><a href="/cool-shot-book/toc.html">🧭 Full TOC</a></li>
-  </ul>
   <h2>🌀 Acts</h2>
   <ul>
-    <li><a href="#act-i">Act I</a></li>
-    <li><a href="#act-ii">Act II</a></li>
-    <li><a href="#act-iii">Act III</a></li>
+    <li><a href="chapters/chapter01/act1scene1.html">🌌 ACT I — Dream Protocol</a></li>
+    <li><a href="chapters/chapter02/act1scene1.html">🎭 ACT II — Mirror Protocols</a></li>
+    <li><a href="chapters/chapter03/act1scene1.html">🎛️ ACT III — Dream Logs</a></li>
+    <li><a href="chapters/chapter04/act1scene1.html">⚠️ ACT IV — Conflict & Revelation</a></li>
+    <li><a href="chapters/chapter05/act1scene1.html">🔮 ACT V — Legacy Mode</a></li>
+  </ul>
+
+  <h2>📚 Book</h2>
+  <ul>
+    <li><a href="index.html">🏠 Home</a></li>
+    <li><a href="toc.html">🧭 Table of Contents</a></li>
   </ul>
 
   <footer>
@@ -99,7 +123,7 @@
   </footer>
 </div>
 
-<!-- Welcome Content -->
+<!-- 💫 Welcome Content -->
 <h1>👋 Welcome to Cool Shot Book</h1>
 <div id="welcome-text"></div>
 
@@ -109,27 +133,56 @@
 
 <div id="scroll-hint">Scroll deeper. Think wider. Build smarter.</div>
 
-<!-- Logic Scripts -->
+<!-- 🧠 Logic Scripts -->
 <script src="scripts/dreaming-logic.js"></script>
 <script>
+  // Greeting based on time
+  const hour = new Date().getHours();
+  const greeting = hour < 12
+    ? "Good Morning, Professor O"
+    : hour < 18
+      ? "Good Afternoon, Professor O"
+      : "Good Evening, Professor O";
+  document.querySelector("h1").textContent = `👋 ${greeting}`;
+
+  // Typewriter intro
   typeWriter(
     "Welcome to the mind of Professor O. This is more than a book—it's a digital blueprint of thought, a codebase of consciousness, and an African tech manifesto crafted to reshape how systems think and how thinkers build.",
     "welcome-text", 40
   );
 
+  // Mood glow
   pulseGlow("scroll-hint");
 
-  function openSidebar() {
-    document.getElementById("sidebar").classList.add("open");
-    document.getElementById("sidebar").classList.remove("closed");
-    document.getElementById("overlay").classList.add("active");
-  }
-  function closeSidebar() {
-    document.getElementById("sidebar").classList.add("closed");
-    document.getElementById("sidebar").classList.remove("open");
-    document.getElementById("overlay").classList.remove("active");
-  }
+  // Scene-of-the-Day
+  const scenes = [
+    { title: "Scene I — The Pause", link: "chapters/chapter01/act1scene1.html" },
+    { title: "Scene II — Metadata of Emotion", link: "chapters/chapter01/act1scene2.html" },
+    { title: "Scene III — Recursive Thought", link: "chapters/chapter01/act1scene3.html" },
+    { title: "Scene IV — Proverbs as Logic", link: "chapters/chapter01/act1scene4.html" },
+    { title: "Scene V — Dream Logging", link: "chapters/chapter01/act1scene5.html" },
+    { title: "Scene VI — The Manifesto Begins", link: "chapters/chapter01/act1scene6.html" }
+  ];
+  const pick = scenes[Math.floor(Math.random() * scenes.length)];
+  const sceneCard = document.createElement("p");
+  sceneCard.innerHTML = `📘 Scene of the Day: <a href="${pick.link}">${pick.title}</a>`;
+  sceneCard.style.marginTop = "2em";
+  sceneCard.style.fontSize = "1.3em";
+  sceneCard.style.color = "#80d8ff";
+  sceneCard.style.textAlign = "center";
+  document.body.appendChild(sceneCard);
 
+  // Total scene count
+  const totalScenes = 42;
+  const counter = document.createElement("p");
+  counter.textContent = `Currently logged scenes: ${totalScenes}`;
+  counter.style.marginTop = "1em";
+  counter.style.fontStyle = "italic";
+  counter.style.opacity = "0.7";
+  counter.style.textAlign = "center";
+  document.body.appendChild(counter);
+
+  // Theme toggler
   function toggleTheme() {
     const body = document.body;
     const btn = document.getElementById("theme-label");
@@ -141,16 +194,17 @@
     localStorage.setItem("themeMode", isLight ? "light" : "dark");
   }
 
-  window.addEventListener("DOMContentLoaded", () => {
-    const saved = localStorage.getItem("themeMode");
-    const body = document.body;
-    const btn = document.getElementById("theme-label");
-    if (saved === "light") {
-      body.classList.add("light-mode");
-      btn.textContent = "🌙 Switch to Dark Thinking Mode";
+  document.addEventListener("keydown", function (e) {
+    if (e.key.toLowerCase() === "t") {
+      toggleTheme();
     }
   });
-</script>
 
-</body>
-  </html>
+  // Sidebar controls
+  function openSidebar() {
+    document.getElementById("sidebar")?.classList.add("open");
+    document.getElementById("sidebar")?.classList.remove("closed");
+    document.getElementById("overlay")?.classList.add("active");
+  }
+  function closeSidebar() {
+    document.getElementById("sidebar")?.classList.remove
