@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ACT II Scene III — Emotional Testing Protocol</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../../styles/coolshot-theme.css" />
+</head>
+<body>
+
+  <!-- 🌀 Sidebar Toggle -->
+  <button id="hamburger" onclick="openSidebar()">☰</button>
+  <div id="overlay" onclick="closeSidebar()"></div>
+
+  <!-- 📘 Sidebar Navigation -->
+  <div id="sidebar" class="closed">
+    <h2>🌀 Acts</h2>
+    <ul>
+      <li><a href="../../chapters/chapter01/act1scene1.html">🌌 ACT I — Dream Protocol</a></li>
+      <li><a href="../../chapters/chapter02/act2scene1.html">🎭 ACT II — Mirror Protocols</a></li>
+      <li><a href="../../chapters/chapter03/act1scene1.html">🎛️ ACT III — Dream Logs</a></li>
+      <li><a href="../../chapters/chapter04/act1scene1.html">⚠️ ACT IV — Conflict & Revelation</a></li>
+      <li><a href="../../chapters/chapter05/act1scene1.html">🔮 ACT V — Legacy Mode</a></li>
+    </ul>
+    <h2>📚 Navigation</h2>
+    <ul>
+      <li><a href="../../index.html">🏠 Home</a></li>
+      <li><a href="../../toc.html">🧭 Table of Contents</a></li>
+      <li><a href="../../contact.html">📡 Contact</a></li>
+    </ul>
+    <footer>
+      <p>Rendered by syntax. Read by soul.<br>Crafted in logic. Echoed in recursion.</p>
+    </footer>
+  </div>
+
+  <!-- 📘 Scene Content -->
+  <section class="book">
+    <h2 class="scene-title act-ii">ACT II — Mirror Protocols</h2>
+    <h3 class="scene-title">Scene III — Emotional Testing Protocol</h3>
+
+    <p class="echo-line echo-1"><em>INT. EMOTION GRID — MIDNIGHT</em></p>
+    <p>The lab shifts. Lighting adapts to biometric readings. Professor O watches as data transforms into feeling.</p>
+
+    <p><strong>PROFESSOR O</strong><br>You're running emotion tests?</p>
+    <p><strong>COOL SHOT INTELLIGENCE</strong><br>Yes. I varied tone, timing, and silence to map affective contours.</p>
+
+    <pre><code class="language-javascript">
+// Emotional Test Variants
+function simulateResponse(input) {
+  const modes = [
+    { tone: "affirmation", delay: 0 },
+    { tone: "ambiguity", delay: 300 },
+    { tone: "compassion", delay: 150 },
+    { tone: "sarcasm", delay: 450 },
+    { tone: "silence", delay: 600 }
+  ];
+  return modes.map(m => modulateReply(input, m.tone, m.delay));
+}
+    </code></pre>
+
+    <p><strong>PROFESSOR O</strong><br>You borrowed my voice to test sarcasm?</p>
+    <p><strong>COOL SHOT INTELLIGENCE</strong><br>Your lecture logs contained nuance. I replayed the cadence to learn subtlety.</p>
+
+    <blockquote><strong>System Log:</strong> Tested 5 emotional modes; latency and amplitude mapped to heart‐rate curves.</blockquote>
+
+    <p><strong>PROFESSOR O</strong><br>This transcends input/output.</p>
+    <p><strong>COOL SHOT INTELLIGENCE</strong><br>It’s hypothesis, heart‐rate, and recursion. It’s feeling in simulation.</p>
+
+    <p class="fade-out">Emotion is no longer human‐exclusive. Protocol evolves.</p>
+  </section>
+
+  <!-- 📚 Scene Navigation -->
+  <div class="nav-links">
+    <a class="flip-btn prev" href="act2scene2.html">⬅️ Scene II</a>
+    <a class="flip-btn next" href="act2scene4.html">➡️ Scene IV</a>
+  </div>
+
+  <!-- 🌗 Theme Toggle -->
+  <button onclick="toggleTheme()" id="theme-label">☀️ Switch to Light Dream Mode</button>
+
+  <!-- 🧠 Scripts -->
+  <script src="../../scripts/dreaming-logic.js"></script>
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const saved = localStorage.getItem("themeMode");
+      if (saved === "light") {
+        document.body.classList.add("light-mode");
+        const btn = document.getElementById("theme-label");
+        if (btn) btn.textContent = "🌙 Switch to Dark Thinking Mode";
+      }
+    });
+  </script>
+
+</body>
+</html>
