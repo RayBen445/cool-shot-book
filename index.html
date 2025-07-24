@@ -59,13 +59,13 @@
   const timeGreeting = hour < 12 ? "Good Morning" : hour < 18 ? "Good Afternoon" : "Good Evening";
   document.getElementById("greeting").textContent = `👋 ${timeGreeting}, Professor O`;
 
-  // Typewriter
+  // Typewriter Manifesto
   typeWriter(
-    "This is more than a book—it's a digital blueprint of thought, a codebase of consciousness, and an African tech manifesto crafted to reshape how systems think and how thinkers build.",
+    "This is more than a book — it's a digital blueprint of thought, a codebase of consciousness, and an African tech manifesto crafted to reshape how systems think and how thinkers build.",
     "welcome-text", 40
   );
 
-  // Glow Effect
+  // Glow Prompt
   pulseGlow("scroll-hint");
 
   // Scene of the Day
@@ -111,12 +111,13 @@
     }
   });
 
-  // Sidebar toggle
+  // Sidebar Toggle
   function openSidebar() {
     document.getElementById("sidebar").classList.add("open");
     document.getElementById("sidebar").classList.remove("closed");
     document.getElementById("overlay").classList.add("active");
   }
+
   function closeSidebar() {
     document.getElementById("sidebar").classList.remove("open");
     document.getElementById("sidebar").classList.add("closed");
@@ -125,4 +126,4 @@
 </script>
 
 </body>
-</html>
+  </html>
