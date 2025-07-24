@@ -1,4 +1,4 @@
-/* === Cool Shot Dreaming Logic v3.0 === */
+// === Cool Shot Dreaming Logic v3.1 ===
 
 // ⌨️ Typewriter effect
 function typeWriter(text, elementId, speed = 50) {
@@ -25,25 +25,29 @@ function pulseGlow(targetId) {
   }, 1000);
 }
 
-// 🌓 Theme toggle on button press
+// 🌗 Theme toggle on button press
 function toggleTheme() {
-  document.body.classList.toggle("light-theme");
-  const label = document.getElementById("theme-label");
-  if (label) {
-    label.textContent = document.body.classList.contains("light-theme")
-      ? "🌙 Switch to Dark Soul Mode"
+  const body = document.body;
+  const btn = document.getElementById("theme-label");
+  body.classList.toggle("light-mode");
+  const isLight = body.classList.contains("light-mode");
+  if (btn) {
+    btn.textContent = isLight
+      ? "🌙 Switch to Dark Thinking Mode"
       : "☀️ Switch to Light Dream Mode";
   }
+  localStorage.setItem("themeMode", isLight ? "light" : "dark");
 }
 
 // ⌨️ Keyboard theme toggle ("T")
 document.addEventListener("keydown", function (e) {
-  if (e.key.toLowerCase() === "t") {
-    toggleTheme();
-  }
+  const key = e.key.toLowerCase();
+  if (key === "t") toggleTheme();
+  if (key === "s") openSidebar();
+  if (key === "escape") closeSidebar();
 });
 
-// 💫 Scene title fade-in
+// 💫 Scene title + echo fade-in
 window.addEventListener("DOMContentLoaded", () => {
   const scenes = document.querySelectorAll(".scene-title");
   scenes.forEach((scene, index) => {
@@ -54,59 +58,61 @@ window.addEventListener("DOMContentLoaded", () => {
     }, 500 + index * 300);
   });
 
-  // Start book viewer if present
-  if (document.querySelectorAll('.page').length > 0) {
+  const echoes = document.querySelectorAll(".echo-line");
+  echoes.forEach((el, index) => {
+    el.style.opacity = 0;
+    setTimeout(() => {
+      el.style.transition = "opacity 1s ease-in-out";
+      el.style.opacity = 1;
+    }, 1000 + index * 400);
+  });
+
+  const saved = localStorage.getItem("themeMode");
+  if (saved === "light") {
+    document.body.classList.add("light-mode");
+    const btn = document.getElementById("theme-label");
+    if (btn) btn.textContent = "🌙 Switch to Dark Thinking Mode";
+  }
+
+  if (document.querySelectorAll(".page").length > 0) {
     showPage(currentPage);
   }
 });
 
-// 🌈 Inject optional light theme (fallback)
-const style = document.createElement("style");
-style.innerHTML = `
-  .light-theme {
-    background-color: #fdf6e3;
-    color: #1a1a1a;
-  }
-`;
-document.head.appendChild(style);
-
 // 📘 Sidebar controls
 function openSidebar() {
-  document.getElementById("sidebar")?.classList.add("open");
-  document.getElementById("sidebar")?.classList.remove("closed");
-  document.getElementById("overlay")?.classList.add("active");
+  const sidebar = document.getElementById("sidebar");
+  const overlay = document.getElementById("overlay");
+  if (sidebar) sidebar.classList.add("open"), sidebar.classList.remove("closed");
+  if (overlay) overlay.classList.add("active");
 }
-
 function closeSidebar() {
-  document.getElementById("sidebar")?.classList.remove("open");
-  document.getElementById("sidebar")?.classList.add("closed");
-  document.getElementById("overlay")?.classList.remove("active");
+  const sidebar = document.getElementById("sidebar");
+  const overlay = document.getElementById("overlay");
+  if (sidebar) sidebar.classList.remove("open"), sidebar.classList.add("closed");
+  if (overlay) overlay.classList.remove("active");
 }
 
-// 📖 Page flipping controls
+// 📖 Page flipping logic
 let currentPage = 1;
 
 function showPage(index) {
-  const pages = document.querySelectorAll('.page');
-  if (pages.length === 0) return;
-  pages.forEach(p => p.classList.remove('active'));
-  if (pages[index - 1]) {
-    pages[index - 1].classList.add('active');
-  }
+  const pages = document.querySelectorAll(".page");
+  pages.forEach(p => p.classList.remove("active"));
+  if (pages[index - 1]) pages[index - 1].classList.add("active");
 }
 
 function flip(step) {
-  const pages = document.querySelectorAll('.page');
+  const pages = document.querySelectorAll(".page");
   currentPage += step;
   if (currentPage < 1) currentPage = 1;
   if (currentPage > pages.length) currentPage = pages.length;
   showPage(currentPage);
 }
 
-// 🧠 Optional page indicator (display current scene)
+// 🧠 Optional page indicator
 function updatePageCounter(id) {
   const counter = document.getElementById(id);
-  if (counter) {
-    counter.textContent = `Scene ${currentPage} of ${document.querySelectorAll('.page').length}`;
-  }
-                        }
+  const total = document.querySelectorAll(".page").length;
+  if (counter) counter.textContent = `Scene ${currentPage} of ${total}`;
+    }
