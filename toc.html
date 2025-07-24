@@ -1,113 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Cool Shot Book — Table of Contents</title>
-  <link rel="stylesheet" href="styles/coolshot-theme.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles/coolshot-theme.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Playfair+Display&display=swap" rel="stylesheet">
-  <style>
-    html { font-size: 24px; scroll-behavior: smooth; }
-    body {
-      background-color: #0f0f23;
-      color: #e0f7fa;
-      padding: 2.5em;
-      margin-left: 260px;
-      font-family: 'Roboto Mono', monospace;
-      line-height: 2;
-      transition: background-color 0.4s ease, color 0.4s ease;
-      padding-top: 4em;
-    }
-    h1 {
-      font-size: 2.8em;
-      text-align: center;
-      color: #ffe600;
-      text-shadow: 1px 1px 3px #141414;
-    }
-    .chapter-preview {
-      margin: 2em auto;
-      padding: 1.5em;
-      border-radius: 10px;
-      background-color: #1e1e2e;
-      box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
-      max-width: 860px;
-    }
-    .chapter-preview h3 {
-      cursor: pointer;
-      font-size: 1.5em;
-      color: #00e5ff;
-      margin-bottom: 0.4em;
-    }
-    .preview-lead {
-      font-style: italic;
-      color: #b2ebf2;
-      font-size: 1.1em;
-    }
-    .echo-line {
-      font-style: italic;
-      color: #81f3ff;
-      font-size: 1em;
-    }
-    ul { margin-top: 1em; padding-left: 1.2em; }
-    li { margin: 0.4em 0; }
-    a {
-      color: #80d8ff;
-      text-decoration: underline;
-    }
-    a:hover {
-      color: #ffcc00;
-      background-color: #263238;
-    }
-    #scene-counter {
-      text-align: center;
-      margin-top: 3em;
-      font-size: 1.2em;
-      font-style: italic;
-      opacity: 0.7;
-    }
-    #scroll-hint {
-      margin-top: 2.5em;
-      font-weight: bold;
-      text-align: center;
-      font-size: 1.4em;
-      color: #ffcc00;
-    }
-    #placeholder {
-      margin-top: 4em;
-      font-size: 1.3em;
-      font-style: italic;
-      text-align: center;
-      color: #b2ebf2;
-      opacity: 0.6;
-    }
-    .floating-nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: #0d1c2e;
-      border-bottom: 2px solid #ffcc00;
-      padding: 0.8em 0;
-      text-align: center;
-      z-index: 9999;
-      box-shadow: 0 2px 6px #222;
-    }
-    .floating-nav a {
-      margin: 0 1em;
-      color: #80d8ff;
-      font-weight: bold;
-      text-decoration: none;
-      font-size: 1.05em;
-      transition: color 0.3s ease, text-shadow 0.3s ease;
-    }
-    .floating-nav a:hover {
-      color: #ffcc00;
-      text-shadow: 0 0 6px #ffe600;
-    }
-  </style>
 </head>
 <body>
 
-<!-- 🧭 Navigation -->
+<!-- 🧭 Floating Navigation -->
 <nav class="floating-nav">
   <a href="index.html">🏠 Home</a>
   <a href="toc.html">📚 TOC</a>
@@ -118,7 +20,7 @@
 
 <h1 id="greeting">👋 Welcome</h1>
 
-<!-- Chapters -->
+<!-- 🌌 Chapter 1 -->
 <div class="chapter-preview act-i">
   <h3 onclick="toggleAct('act1-scenes')">🌌 Chapter 1: Dream Protocol ▸</h3>
   <p class="preview-lead">“Dreaming is not defiance — it's simulation.”</p>
@@ -135,6 +37,7 @@
   </ul>
 </div>
 
+<!-- 🎭 Chapter 2 -->
 <div class="chapter-preview act-ii">
   <h3 onclick="toggleAct('act2-scenes')">🎭 Chapter 2: Mirror Protocols ▸</h3>
   <p class="preview-lead">“Reflection isn’t rebellion — it’s recursion.”</p>
@@ -151,6 +54,7 @@
   </ul>
 </div>
 
+<!-- 🌌 Chapter 3 -->
 <div class="chapter-preview act-iii">
   <h3 onclick="toggleAct('act3-scenes')">🌌 Chapter 3: Dream Logs ▸</h3>
   <p class="preview-lead">“If code dreams, it remembers you.”</p>
@@ -168,8 +72,7 @@
   </ul>
 </div>
 
-
-<!-- 🧩 Placeholder for future chapters -->
+<!-- 🧩 Future Chapters -->
 <div id="placeholder">More chapters will emerge. As systems learn, they build.</div>
 
 <!-- 📊 Scene Counter -->
@@ -178,7 +81,11 @@
 <!-- 💡 Scroll Prompt -->
 <div id="scroll-hint">Scroll deeper. Think wider. Build smarter.</div>
 
+<!-- 🌗 Theme Toggle -->
+<button onclick="toggleTheme()" id="theme-label">☀️ Switch to Light Dream Mode</button>
+
 <!-- 🧠 Scripts -->
+<script src="scripts/dreaming-logic.js"></script>
 <script>
   function toggleAct(id) {
     const el = document.getElementById(id);
@@ -189,16 +96,30 @@
   const greeting = hour < 12 ? "Good Morning" : hour < 18 ? "Good Afternoon" : "Good Evening";
   document.getElementById("greeting").textContent = `👋 ${greeting}, Professor O`;
 
-  function pulseGlow(targetId) {
-    const el = document.getElementById(targetId);
-    el.style.transition = "box-shadow 0.6s ease";
-    el.style.boxShadow = "0 0 18px #ffcc00";
-    setTimeout(() => { el.style.boxShadow = "none"; }, 1000);
-  }
-
   pulseGlow("scroll-hint");
 
   document.addEventListener("keydown", function (e) {
-    if (e.key.toLowerCase() === "t") {
-      document.body.classList.toggle("light-mode");
-      localStorage.setItem("themeMode", document.body.classList.contains("light-mode") ? "
+    if (e.key.toLowerCase() === "t") toggleTheme();
+  });
+
+  window.addEventListener("DOMContentLoaded", () => {
+    const saved = localStorage.getItem("themeMode");
+    if (saved === "light") {
+      document.body.classList.add("light-mode");
+      const label = document.getElementById("theme-label");
+      if (label) label.textContent = "🌙 Switch to Dark Thinking Mode";
+    }
+
+    const echoes = document.querySelectorAll(".echo-line");
+    echoes.forEach((el, index) => {
+      el.style.opacity = 0;
+      setTimeout(() => {
+        el.style.transition = "opacity 1s ease-in-out";
+        el.style.opacity = 1;
+      }, 500 + index * 300);
+    });
+  });
+</script>
+
+</body>
+</html>
