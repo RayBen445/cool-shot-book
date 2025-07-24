@@ -1,6 +1,6 @@
 /* ✨ Fluid Typography & Layout */
 html {
-  font-size: clamp(1rem, 2vw + 0.5rem, 1.6rem);
+  font-size: clamp(1rem, 2vw + 0.5rem, 1.6rem); /* Responsive scaling from ~16px to ~25.6px */
   scroll-behavior: smooth;
 }
 body {
@@ -17,7 +17,9 @@ body.light-mode {
   background-color: #f6f6f6;
   color: #1e1e2e;
 }
-body.light-mode h1, body.light-mode h2 {
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode h3 {
   color: #2c3e50;
   text-shadow: none;
 }
@@ -29,13 +31,13 @@ h1, h2, h3 {
   font-weight: 700;
 }
 h1 {
-  font-size: 2.8em;
+  font-size: 2.8em; /* ~45px at max scale */
   text-align: center;
   color: #ffe600;
   margin-bottom: 1em;
 }
 h2 {
-  font-size: 2em;
+  font-size: 2em; /* ~32px */
   color: #00e5ff;
   margin-top: 2.5em;
   border-bottom: 1px dashed #333;
@@ -48,9 +50,11 @@ h3.scene-title {
   text-transform: uppercase;
   border-bottom: 2px solid;
 }
-.scene-title.act-i  { color: #ffcc00; border-color: #ffcc00; }
-.scene-title.act-ii { color: #00e5ff; border-color: #00e5ff; }
+.scene-title.act-i   { color: #ffcc00; border-color: #ffcc00; }
+.scene-title.act-ii  { color: #00e5ff; border-color: #00e5ff; }
 .scene-title.act-iii { color: #ff91af; border-color: #ff91af; }
+.scene-title.act-iv  { color: #ff3d00; border-color: #ff3d00; }
+.scene-title.act-v   { color: #b388ff; border-color: #b388ff; }
 
 /* 📜 Blockquotes & Reflection */
 blockquote {
