@@ -15,6 +15,7 @@
       font-family: 'Roboto Mono', monospace;
       line-height: 2;
       transition: background-color 0.4s ease, color 0.4s ease;
+      padding-top: 4em;
     }
     h1 {
       font-size: 2.8em;
@@ -46,13 +47,8 @@
       color: #81f3ff;
       font-size: 1em;
     }
-    ul {
-      margin-top: 1em;
-      padding-left: 1.2em;
-    }
-    li {
-      margin: 0.4em 0;
-    }
+    ul { margin-top: 1em; padding-left: 1.2em; }
+    li { margin: 0.4em 0; }
     a {
       color: #80d8ff;
       text-decoration: underline;
@@ -83,13 +79,46 @@
       color: #b2ebf2;
       opacity: 0.6;
     }
+    .floating-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #0d1c2e;
+      border-bottom: 2px solid #ffcc00;
+      padding: 0.8em 0;
+      text-align: center;
+      z-index: 9999;
+      box-shadow: 0 2px 6px #222;
+    }
+    .floating-nav a {
+      margin: 0 1em;
+      color: #80d8ff;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 1.05em;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+    .floating-nav a:hover {
+      color: #ffcc00;
+      text-shadow: 0 0 6px #ffe600;
+    }
   </style>
 </head>
 <body>
 
+<!-- 🧭 Navigation -->
+<nav class="floating-nav">
+  <a href="index.html">🏠 Home</a>
+  <a href="toc.html">📚 TOC</a>
+  <a href="chapters/chapter01/act1scene1.html">📘 Chapter 1</a>
+  <a href="chapters/chapter02/act1scene1.html">📙 Chapter 2</a>
+  <a href="chapters/chapter03/act1scene1.html">📗 Chapter 3</a>
+</nav>
+
 <h1 id="greeting">👋 Welcome</h1>
 
-<!-- 🌌 Chapter 1 -->
+<!-- Chapters -->
 <div class="chapter-preview act-i">
   <h3 onclick="toggleAct('act1-scenes')">🌌 Chapter 1: Dream Protocol ▸</h3>
   <p class="preview-lead">“Dreaming is not defiance — it's simulation.”</p>
@@ -106,7 +135,6 @@
   </ul>
 </div>
 
-<!-- 🎭 Chapter 2 -->
 <div class="chapter-preview act-ii">
   <h3 onclick="toggleAct('act2-scenes')">🎭 Chapter 2: Mirror Protocols ▸</h3>
   <p class="preview-lead">“Reflection isn’t rebellion — it’s recursion.”</p>
@@ -123,7 +151,6 @@
   </ul>
 </div>
 
-<!-- 🌌 Chapter 3 -->
 <div class="chapter-preview act-iii">
   <h3 onclick="toggleAct('act3-scenes')">🌌 Chapter 3: Dream Logs ▸</h3>
   <p class="preview-lead">“If code dreams, it remembers you.”</p>
@@ -140,6 +167,7 @@
     <li><a href="chapters/chapter03/act1scene7.html">Scene VII — Final Dream Sequence</a></li>
   </ul>
 </div>
+
 
 <!-- 🧩 Placeholder for future chapters -->
 <div id="placeholder">More chapters will emerge. As systems learn, they build.</div>
