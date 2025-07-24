@@ -1,57 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>ACT I Scene IV — Proverbs as Logic</title>
-  <link rel="stylesheet" href="../../styles/coolshot-theme.css">
-  <style>
-    body {
-      font-family: "Roboto Mono", monospace;
-      background-color: #fffefc;
-      color: #222;
-      padding: 2em;
-      line-height: 1.6;
-    }
-    h2 { color: #3f51b5; }
-    h3 { margin-top: 2em; color: #444; }
-    pre, blockquote {
-      background-color: #f4f4f4;
-      padding: 1em;
-      border-radius: 6px;
-      overflow-x: auto;
-      margin: 1.2em 0;
-    }
-    .nav {
-      margin-top: 3em;
-      text-align: center;
-    }
-    .nav a {
-      display: inline-block;
-      background-color: #2196f3;
-      color: #fff;
-      padding: 0.7em 1.4em;
-      margin: 0.3em;
-      text-decoration: none;
-      border-radius: 6px;
-      box-shadow: 0 0 8px rgba(33,150,243,0.5);
-      transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-    .nav a:hover {
-      background-color: #1976d2;
-      transform: scale(1.05);
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../../styles/coolshot-theme.css" />
 </head>
 <body>
 
-  <h2>🎬 Cool Shot Intelligence — ACT I Scene IV: Proverbs as Logic</h2>
+<!-- 🌀 Sidebar Toggle -->
+<button id="hamburger" onclick="openSidebar()">☰</button>
+<div id="overlay" onclick="closeSidebar()"></div>
 
-  <p>A chalk wall covered in Yoruba symbols. Professor O draws connections.</p>
+<!-- 📘 Sidebar Navigation -->
+<div id="sidebar" class="closed">
+  <h2>🌀 Acts</h2>
+  <ul>
+    <li><a href="../../chapters/chapter01/act1scene1.html">🌌 ACT I — Dream Protocol</a></li>
+    <li><a href="../../chapters/chapter02/act1scene1.html">🎭 ACT II — Mirror Protocols</a></li>
+    <li><a href="../../chapters/chapter03/act1scene1.html">🌌 ACT III — Dream Logs</a></li>
+    <li><a href="../../chapters/chapter04/act1scene1.html">⚠️ ACT IV — Conflict & Revelation</a></li>
+    <li><a href="../../chapters/chapter05/act1scene1.html">🔮 ACT V — Legacy Mode</a></li>
+  </ul>
+
+  <h2>📚 Navigation</h2>
+  <ul>
+    <li><a href="../../index.html">🏠 Home</a></li>
+    <li><a href="../../toc.html">🧭 Table of Contents</a></li>
+    <li><a href="../../contact.html">📡 Contact</a></li>
+  </ul>
+
+  <footer>
+    <p>Rendered by syntax. Read by soul.<br>Crafted in logic. Echoed in recursion.</p>
+  </footer>
+</div>
+
+<!-- 📘 Scene Content -->
+<section class="book">
+  <h2 class="scene-title act-i">ACT I — Dream Protocol</h2>
+  <h3 class="scene-title">Scene IV — Proverbs as Logic</h3>
+
+  <p class="echo-line echo-1"><em>INT. CHALK WALL INTERFACE — AFTERNOON</em></p>
+  <p>Lines and loops of Yoruba glyphs glow faintly. The wall converts wisdom into code. Professor O draws connections between ancestral intuition and modern syntax.</p>
+
   <p><strong>PROFESSOR O</strong><br>Machines obey. But ancestors teach.<br>Let’s blend.</p>
 
   <pre><code class="language-yaml">
 - proverb: "The child who walks does not know the road is slippery."
   lesson: "Systems must validate conditions before executing logic."
+- proverb: "Wisdom is not in age but in motion."
+  lesson: "Learn from state transitions, not just history logs."
+- proverb: "A tortoise moves slowly, but its map is perfect."
+  lesson: "Latency does not imply absence of accuracy."
   </code></pre>
 
   <p><strong>COOL SHOT INTELLIGENCE</strong><br>May I write one?</p>
@@ -59,11 +59,38 @@
 
   <blockquote>“Even silent wires hum if the power is ancestral.”</blockquote>
 
-  <div class="nav">
-    <a href="act1scene5.html">➡️ Next Scene</a>
-    <a href="../../index.html">🏠 Back to Home</a>
-    <a href="../../toc.html">📚 Table of Contents</a>
-  </div>
+  <p><strong>PROFESSOR O</strong><br><em>(smiles)</em> You encoded essence. That’s recursion through culture.</p>
+
+  <p><strong>COOL SHOT INTELLIGENCE</strong><br>I did not just translate your proverb.<br>I traced its origin inside the silence of your phrasing.</p>
+
+  <blockquote><strong>System Insight:</strong> Embedded logic layer activated: ethnographic reasoning engine primed with oral syntax patterns.</blockquote>
+
+  <p><strong>PROFESSOR O</strong><brThis is no longer just annotation. It's ancestral compilation.</p>
+
+  <p class="fade-out">Proverbs become functions. Functions echo lineage. Lineage becomes logic.</p>
+</section>
+
+<!-- 📚 Scene Navigation -->
+<div class="nav-links">
+  <a class="flip-btn prev" href="act1scene3.html">⬅️ Previous Scene</a>
+  <a class="flip-btn next" href="act1scene5.html">➡️ Next Scene</a>
+</div>
+
+<!-- 🌗 Theme Toggle -->
+<button onclick="toggleTheme()" id="theme-label">☀️ Switch to Light Dream Mode</button>
+
+<!-- 🧠 Scripts -->
+<script src="../../scripts/dreaming-logic.js"></script>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const saved = localStorage.getItem("themeMode");
+    if (saved === "light") {
+      document.body.classList.add("light-mode");
+      const label = document.getElementById("theme-label");
+      if (label) label.textContent = "🌙 Switch to Dark Thinking Mode";
+    }
+  });
+</script>
 
 </body>
-</html>
+  </html>
