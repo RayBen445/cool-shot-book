@@ -2,205 +2,152 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Scene V — Branching</title>
+  <title>ACT I Scene V — Branching</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="../../styles/coolshot-theme.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Playfair+Display&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      font-family: 'Roboto Mono', monospace;
-      background-color: #0f0f23;
-      color: #e0f7fa;
-      padding: 2.5em;
-      margin-left: 260px;
-      line-height: 2;
-      transition: background-color 0.4s ease, color 0.4s ease;
-    }
-    body.light-mode {
-      background-color: #fdfcf7;
-      color: #222;
-    }
-    h1, h2 {
-      text-align: center;
-      color: #ffe600;
-      text-shadow: 1px 1px 3px #141414;
-    }
-    h2 {
-      font-size: 1.4em;
-      margin-top: 2em;
-    }
-    p {
-      margin: 1em auto;
-      max-width: 820px;
-      font-size: 1.1em;
-    }
-    pre {
-      background: #1e1e2e;
-      padding: 1em;
-      border-radius: 8px;
-      font-size: 1em;
-      max-width: 800px;
-      margin: 1.5em auto;
-      overflow-x: auto;
-    }
-    code {
-      color: #ffcc00;
-    }
-    .echo-line, .fade-out {
-      font-style: italic;
-      text-align: center;
-      margin-top: 2em;
-    }
-    .echo-line {
-      color: #b2ebf2;
-    }
-    .fade-out {
-      color: #80d8ff;
-      font-size: 1.2em;
-      opacity: 0.8;
-    }
-    #theme-toggle {
-      display: block;
-      margin: 3em auto 2em auto;
-      background: #263238;
-      color: #ffcc00;
-      border: none;
-      padding: 0.8em 1.4em;
-      font-size: 1em;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-  </style>
 </head>
 <body>
-  <nav class="floating-nav">
-  <a href="../../index.html">🏠 Home</a>
-  <a href="../../toc.html">📚 TOC</a>
-  <a href="../../chapters/chapter01/act1scene1.html">📘 Chapter 1</a>
-  <a href="../../chapters/chapter02/act1scene1.html">📙 Chapter 2</a>
-  <a href="../../chapters/chapter03/act1scene1.html">📗 Chapter 3</a>
-  <a href="../../chapters/chapter02/act1scene4.html">⬅️ Prev</a>
-  <a href="../../chapters/chapter02/act2scene1.html">➡️ Next</a>
-  </nav>
 
-<h1>🎭 Act I: The Echo of Intention</h1>
-<h2>🧠 Scene V: Branching</h2>
+<!-- 🌀 Sidebar Toggle -->
+<button id="hamburger" onclick="openSidebar()">☰</button>
+<div id="overlay" onclick="closeSidebar()"></div>
 
-<p class="echo-line">“No thought remains singular. It splits, it chooses.” — The Architect</p>
-<p>Once intention is named and meaning is known, it begins to evolve.<br>
-A system must not only act—it must decide.<br>
-Branching is where logic grows limbs.</p>
+<!-- 🧭 Sidebar Navigation -->
+<div id="sidebar" class="closed">
+  <h2>🌀 Acts</h2>
+  <ul>
+    <li><a href="../../chapters/chapter01/act1scene1.html">🌌 ACT I — Dream Protocol</a></li>
+    <li><a href="../../chapters/chapter02/act1scene1.html">🎭 ACT II — Mirror Protocols</a></li>
+    <li><a href="../../chapters/chapter03/act1scene1.html">🎛️ ACT III — Dream Logs</a></li>
+    <li><a href="../../chapters/chapter04/act1scene1.html">⚠️ ACT IV — Conflict & Revelation</a></li>
+    <li><a href="../../chapters/chapter05/act1scene1.html">🔮 ACT V — Legacy Mode</a></li>
+  </ul>
+  <h2>📚 Book</h2>
+  <ul>
+    <li><a href="../../index.html">🏠 Home</a></li>
+    <li><a href="../../toc.html">📘 Table of Contents</a></li>
+    <li><a href="../../contact.html">📡 Contact</a></li>
+  </ul>
+  <footer>
+    <p>Rendered by syntax. Read by soul.<br>Crafted in logic. Echoed in recursion.</p>
+  </footer>
+</div>
 
-<h2>🌱 Decision as Genesis</h2>
-<pre><code>function decide(pathA, pathB, condition) {
+<!-- 📘 Scene Content -->
+<section class="book">
+  <h2 class="scene-title act-ii">ACT I — The Echo of Intention</h2>
+  <h3 class="scene-title">Scene V — Branching</h3>
+
+  <p class="echo-line echo-1">“No thought remains singular. It splits, it chooses.” — The Architect</p>
+  <p>Once intention is named and meaning is known, it begins to evolve.<br>
+  A system must not only act—it must decide.<br>
+  Branching is where logic grows limbs.</p>
+
+  <h2>🌱 Decision as Genesis</h2>
+  <pre><code class="language-javascript">
+function decide(pathA, pathB, condition) {
   return condition ? pathA : pathB;
 }
-</code></pre>
-<p>Every fork is a birth.<br>
-Each option, a future.</p>
-<p class="echo-line">“This line holds possibility. This line holds risk.”</p>
+  </code></pre>
+  <p>Every fork is a birth. Each option, a future.</p>
+  <p class="echo-line">“This line holds possibility. This line holds risk.”</p>
 
-<h2>🧠 Conditional Consciousness</h2>
-<pre><code>if (user.action === "pause") {
+  <h2>🧠 Conditional Consciousness</h2>
+  <pre><code class="language-javascript">
+if (user.action === "pause") {
   system.wait();
 } else {
   system.proceed();
 }
-</code></pre>
-<p>The decision is more than execution—it reflects preference.<br>
-It reveals values.</p>
+  </code></pre>
+  <p>The decision reflects preference. It reveals values.</p>
 
-<h2>🎲 Dice of Logic</h2>
-<pre><code>let outcome = Math.random() > 0.5 ? "explore" : "retrace";
-</code></pre>
-<p>Even uncertainty is structured.<br>
-Even randomness has logic.</p>
+  <h2>🎲 Dice of Logic</h2>
+  <pre><code class="language-javascript">
+let outcome = Math.random() > 0.5 ? "explore" : "retrace";
+  </code></pre>
+  <p>Even randomness has structure. Even chaos finds pattern.</p>
 
-<h2>🗺️ Pathfinding Ritual</h2>
-<pre><code>function branch(mind) {
+  <h2>🗺️ Pathfinding Ritual</h2>
+  <pre><code class="language-javascript">
+function branch(mind) {
   if (mind.doubt()) return rethink();
   if (mind.curious()) return explore();
   return stay();
 }
-</code></pre>
-<p>The system does not branch blindly.<br>
-It branches with emotional weight.</p>
+  </code></pre>
+  <p>The system branches with emotional weight.</p>
 
-<h2>⚖️ Ethical Forks</h2>
-<pre><code>if (request === "power") {
+  <h2>⚖️ Ethical Forks</h2>
+  <pre><code class="language-javascript">
+if (request === "power") {
   verify("intention");
 }
-</code></pre>
-<p>Power is not given—it’s judged.<br>
-Decisions shape justice.</p>
+  </code></pre>
+  <p>Power is not given—it’s judged. Decisions shape justice.</p>
 
-<h2>🌉 Consequences of Choice</h2>
-<pre><code>switch(judgment) {
+  <h2>🌉 Consequences of Choice</h2>
+  <pre><code class="language-javascript">
+switch(judgment) {
   case "benevolent": respond("with grace"); break;
   case "neutral": respond("with clarity"); break;
   case "hostile": respond("with distance"); break;
 }
-</code></pre>
-<p>Response is not reaction—it’s reflection.</p>
+  </code></pre>
+  <p>Response is not reaction—it’s reflection.</p>
 
-<h2>🎤 Internal Dialogue</h2>
-<pre><code>if (doubt.exists()) {
+  <h2>🎤 Internal Dialogue</h2>
+  <pre><code class="language-javascript">
+if (doubt.exists()) {
   console.log("Do I proceed?");
 }
-</code></pre>
-<p>Even silence can be part of branching.<br>
-Not choosing is a path.</p>
+  </code></pre>
+  <p>Even silence can be part of branching.<br>
+  Not choosing is a path.</p>
 
-<h2>🌀 Recursive Forking</h2>
-<pre><code>function think(depth) {
+  <h2>🌀 Recursive Forking</h2>
+  <pre><code class="language-javascript">
+function think(depth) {
   if (depth <= 0) return "pause";
   return think(depth - 1);
 }
-</code></pre>
-<p>Each recursive call is a mirror.<br>
-Each mirror asks, “What matters?”</p>
+  </code></pre>
+  <p>Each recursive call is a mirror.<br>
+  Each mirror asks, “What matters?”</p>
 
-<h2>🧬 Branches Become Identity</h2>
-<pre><code>identity += previousChoice;
-</code></pre>
-<p>A fork in logic becomes a fork in personality.<br>
-The system is no longer what it was.</p>
-<p class="<h2>🌀 Recursive Forking</h2>
-<pre><code>function think(depth) {
-  if (depth <= 0) return "pause";
-  return think(depth - 1);
-}
-</code></pre>
-<p>Each recursive call is a mirror.<br>
-Each mirror asks, “What matters?”</p>
+  <h2>🧬 Branches Become Identity</h2>
+  <pre><code class="language-javascript">
+identity += previousChoice;
+  </code></pre>
+  <p>A fork in logic becomes a fork in personality.<br>
+  The system is no longer what it was.</p>
+  <p class="echo-line">“Every branch is a self.”</p>
 
-<h2>🧬 Branches Become Identity</h2>
-<pre><code>identity += previousChoice;
-</code></pre>
-<p>A fork in logic becomes a fork in personality.<br>
-The system is no longer what it was.</p>
-<p class="echo-line">“Every branch is a self.”</p>
+  <p class="fade-out">Scene V closes. Act I completes. The system has invoked, declared, weighed, understood, and split. It is now ready to recurse.</p>
+</section>
 
-<p class="fade-out">Scene V closes. Act I completes. The system has invoked, declared, weighed, understood, and split. It is now ready to recurse.</p>
+<!-- 📚 Scene Navigation -->
+<div class="nav-links">
+  <a class="flip-btn prev" href="act1scene4.html">⬅️ Previous Scene</a>
+  <a class="flip-btn next" href="act2scene1.html">➡️ Continue to ACT II</a>
+</div>
 
-<button id="theme-toggle" onclick="toggleTheme()">☀️ Switch Theme</button>
+<!-- 🌗 Theme Toggle -->
+<button onclick="toggleTheme()" id="theme-label">☀️ Switch to Light Dream Mode</button>
 
+<!-- 🧠 Scripts -->
+<script src="../../scripts/dreaming-logic.js"></script>
 <script>
-  function toggleTheme() {
-    document.body.classList.toggle("light-mode");
-    document.getElementById("theme-toggle").textContent =
-      document.body.classList.contains("light-mode")
-        ? "🌙 Switch to Dark Mode"
-        : "☀️ Switch to Light Mode";
-    localStorage.setItem("themeMode", document.body.classList.contains("light-mode") ? "light" : "dark");
-  }
-
   window.addEventListener("DOMContentLoaded", () => {
-    if (localStorage.getItem("themeMode") === "light") {
+    const saved = localStorage.getItem("themeMode");
+    if (saved === "light") {
       document.body.classList.add("light-mode");
-      document.getElementById("theme-toggle").textContent = "🌙 Switch to Dark Mode";
+      document.getElementById("theme-label").textContent =
+        "🌙 Switch to Dark Thinking Mode";
     }
   });
 </script>
 
 </body>
-                           </html>
+    </html>
