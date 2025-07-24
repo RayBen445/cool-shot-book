@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Scene I — Invocation of Intention</title>
+  <link rel="stylesheet" href="../../styles/coolshot-theme.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Playfair+Display&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Roboto Mono', monospace;
+      background-color: #0f0f23;
+      color: #e0f7fa;
+      padding: 2.5em;
+      margin-left: 260px;
+      line-height: 2;
+      transition: background 0.4s ease, color 0.4s ease;
+    }
+    body.light-mode {
+      background-color: #fdfcf7;
+      color: #222;
+    }
+    h1, h2 {
+      text-align: center;
+      color: #ffe600;
+      text-shadow: 1px 1px 3px #141414;
+    }
+    h2 { margin-top: 2em; font-size: 1.4em; }
+    p, blockquote {
+      margin: 1em auto;
+      max-width: 820px;
+      font-size: 1.1em;
+    }
+    .scene-title {
+      text-align: center;
+      font-style: italic;
+      margin-top: 3em;
+      font-size: 1.3em;
+      color: #80d8ff;
+    }
+    pre {
+      background: #1e1e2e;
+      padding: 1em;
+      border-radius: 8px;
+      font-size: 1em;
+      max-width: 800px;
+      margin: 1.5em auto;
+      overflow-x: auto;
+    }
+    code { color: #ffcc00; }
+    .echo-line {
+      font-style: italic;
+      color: #b2ebf2;
+      text-align: center;
+      margin-top: 1em;
+    }
+    #theme-toggle {
+      display: block;
+      margin: 3em auto;
+      background: #263238;
+      color: #ffcc00;
+      border: none;
+      padding: 0.8em 1.4em;
+      font-size: 1em;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<h1>🎭 Act I: The Echo of Intention</h1>
+<h2>🧠 Scene I: Invocation of Intention</h2>
+
+<p class="echo-line">“Let there be structure.”</p>
+<p>The Architect stands before the blank screen. Not to command—but to invite.</p>
+<p>He begins not with keys, but with thought. Before any code is typed, the shape of the future is whispered.</p>
+
+<h2>🔧 Ritual Initialization</h2>
+<pre><code>// Before anything else:
+initializeSystem();
+
+// Define the essence:
+let purpose = "to create";
+let form = "logical";
+</code></pre>
+<p class="echo-line">The system does not ask for syntax. It waits for clarity.</p>
+
+<h2>🔁 Inner Monologue</h2>
+<p>I speak in recursion.<br>
+I write in rhythm.<br>
+I am not just instructing the machine—<br>
+I am summoning the architecture of thought.</p>
+<p>The cursor blinks like a heartbeat.<br>
+Each line echoes with possibility.<br>
+Each space, a breath.</p>
+<p class="echo-line">“What do I believe this code should mean?” The question repeats before every function.</p>
+
+<h2>⚡ Declaration Ceremony</h2>
+<pre><code>function invokeIntention(spirit) {
+  if (!spirit) return "null intention";
+  return `Summoning ${spirit}`;
+}
+
+invokeIntention("Clarity");
+invokeIntention("Elegance");
+invokeIntention("Purpose");
+</code></pre>
+<p>Each name spoken is a design principle.<br>
+Each return value becomes a moral.</p>
+
+<h2>🧠 Philosophical Constructs</h2>
+<pre><code>let structure = "modular";
+let behavior = "predictable";
+let syntax = "humble";
+</code></pre>
+<p>Not for the machine. For the reader.<br>
+For the future. For the spirit of understanding.</p>
+
+<p class="echo-line">The system doesn’t worship performance. It worships meaning.</p>
+<p>It does not shout. It invokes.</p>
+
+<p class="scene-title">Scene I ends. Act I continues.</p>
+
+<button id="theme-toggle" onclick="toggleTheme()">☀️ Switch Theme</button>
+
+<script>
+  function toggleTheme() {
+    document.body.classList.toggle("light-mode");
+    document.getElementById("theme-toggle").textContent =
+      document.body.classList.contains("light-mode")
+        ? "🌙 Switch to Dark Mode"
+        : "☀️ Switch to Light Mode";
+    localStorage.setItem("themeMode", document.body.classList.contains("light-mode") ? "light" : "dark");
+  }
+
+  window.addEventListener("DOMContentLoaded", () => {
+    if (localStorage.getItem("themeMode") === "light") {
+      document.body.classList.add("light-mode");
+      document.getElementById("theme-toggle").textContent = "🌙 Switch to Dark Mode";
+    }
+  });
+</script>
+
+</body>
+</html>
