@@ -3,91 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Welcome to Cool Shot Book</title>
-  <link rel="stylesheet" href="styles/coolshot-theme.css">
+  <link rel="stylesheet" href="styles/coolshot-theme.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Playfair+Display&display=swap" rel="stylesheet">
-  <style>
-    html { font-size: 20px; scroll-behavior: smooth; }
-    body {
-      min-height: 100vh;
-      padding: 2.5em;
-      margin-left: 260px;
-      background-color: #0f0f23;
-      color: #e0f7fa;
-      font-family: 'Roboto Mono', monospace;
-      line-height: 1.9;
-      transition: background-color 0.4s ease, color 0.4s ease;
-    }
-    body.light-mode {
-      background-color: #f6f6f6;
-      color: #1e1e2e;
-    }
-    body.light-mode h1, h2 { color: #2c3e50; text-shadow: none; }
-    h1 {
-      font-size: 2.5em;
-      text-align: center;
-      margin-bottom: 0.5em;
-      color: #ffe600;
-      text-shadow: 1px 1px 3px #141414;
-    }
-    #welcome-text {
-      font-size: 1.6em;
-      max-width: 900px;
-      margin: 2em auto;
-      text-align: center;
-    }
-    #theme-label {
-      margin-top: 2em;
-      background-color: #263238;
-      color: #ffcc00;
-      border: none;
-      padding: 0.8em 1.4em;
-      font-size: 1em;
-      cursor: pointer;
-      border-radius: 4px;
-      font-family: 'Roboto Mono', monospace;
-      transition: background 0.3s ease;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    #scroll-hint {
-      margin-top: 2.5em;
-      font-weight: bold;
-      font-size: 1.3em;
-      text-align: center;
-      color: #ffcc00;
-    }
-    #scene-card, #scene-counter {
-      text-align: center;
-      margin-top: 2em;
-      font-size: 1.2em;
-      font-style: italic;
-    }
-    #scene-card a {
-      color: #80d8ff;
-      text-decoration: underline;
-    }
-    #hamburger {
-      position: fixed;
-      top: 1em;
-      left: 1em;
-      font-size: 2em;
-      color: #ffcc00;
-      background: none;
-      border: none;
-      cursor: pointer;
-      z-index: 1001;
-    }
-    #overlay {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: 998;
-    }
-    #overlay.active { display: block; }
-  </style>
 </head>
 <body>
 
@@ -137,24 +54,17 @@
 <!-- ⚙️ Scripts -->
 <script src="scripts/dreaming-logic.js"></script>
 <script>
-  // Greeting logic
   const hour = new Date().getHours();
-  const timeGreeting =
-    hour < 12 ? "Good Morning"
-    : hour < 18 ? "Good Afternoon"
-    : "Good Evening";
+  const timeGreeting = hour < 12 ? "Good Morning" : hour < 18 ? "Good Afternoon" : "Good Evening";
   document.getElementById("greeting").textContent = `👋 ${timeGreeting}, Professor O`;
 
-  // Typewriter intro
   typeWriter(
     "This is more than a book—it's a digital blueprint of thought, a codebase of consciousness, and an African tech manifesto crafted to reshape how systems think and how thinkers build.",
     "welcome-text", 40
   );
 
-  // Glow hint
   pulseGlow("scroll-hint");
 
-  // Scene of the Day
   const scenes = [
     { title: "Scene I — The Pause", link: "chapters/chapter01/act1scene1.html" },
     { title: "Scene II — Metadata of Emotion", link: "chapters/chapter01/act1scene2.html" },
@@ -164,27 +74,23 @@
     { title: "Scene VI — The Manifesto Begins", link: "chapters/chapter01/act1scene6.html" }
   ];
   const pick = scenes[Math.floor(Math.random() * scenes.length)];
-  document.getElementById("scene-card").innerHTML =
-    `📘 Scene of the Day: <a href="${pick.link}">${pick.title}</a>`;
+  document.getElementById("scene-card").innerHTML = `📘 Scene of the Day: <a href="${pick.link}">${pick.title}</a>`;
 
-  // Scene Counter
   const totalScenes = 42;
-  document.getElementById("scene-counter").textContent =
-    `📊 Currently logged scenes: ${totalScenes}`;
+  document.getElementById("scene-counter").textContent = `📊 Currently logged scenes: ${totalScenes}`;
 
-  // Sidebar toggle
   function openSidebar() {
     document.getElementById("sidebar").classList.add("open");
     document.getElementById("sidebar").classList.remove("closed");
     document.getElementById("overlay").classList.add("active");
   }
+
   function closeSidebar() {
     document.getElementById("sidebar").classList.remove("open");
     document.getElementById("sidebar").classList.add("closed");
     document.getElementById("overlay").classList.remove("active");
   }
 
-  // Theme toggle
   function toggleTheme() {
     const body = document.body;
     const btn = document.getElementById("theme-label");
@@ -211,4 +117,4 @@
 </script>
 
 </body>
-</html>
+    </html>
